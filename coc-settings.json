@@ -1,0 +1,19 @@
+{
+  "suggest.noselect": true,
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "args": ["-remote=auto"],
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "disableDiagnostics": false
+    }
+  },
+  "diagnostic.displayByAle": true,
+  "diagnostic.autoRefresh": true,
+  "go": {
+    "path": "/Users/shide.foo/.config/coc/extensions/coc-go-data/bin/gopls",
+    "goplsArgs": ["-remote=auto"],
+    "buildFlags": []
+  }
+}
