@@ -1,53 +1,42 @@
 return {
-    {"lifepillar/vim-solarized8"}, {"neoclide/coc.nvim", lazy = false}, {
-        "nvim-tree/nvim-tree.lua",
-        dependencies = {'nvim-tree/nvim-web-devicons'},
-        keys = {
-            {"<leader>nn", "<cmd>NvimTreeToggle<cr>", desc = "NvimTreeToggle"}
-        },
-        config = function()
-            require("nvim-tree").setup({
-                sort_by = "case_sensitive",
-                view = {
-                    side = "right",
-                    mappings = {
-                        list = {
-                            {key = "u", action = "dir_up"},
-                            {key = "s", action = "vsplit"},
-                            {key = "v", action = "ssplit"},
-                            {key = "t", action = "tabnew"},
-                            {key = "ma", action = "create"},
-                            {key = "md", action = "remove"},
-                            {key = "mD", action = "trash"},
-                            {key = "mm", action = "rename"},
-                            {key = "mr", action = "system_open"}
-                        }
-                    }
-                },
-                renderer = {group_empty = true},
-                filters = {dotfiles = true}
-            })
-        end
-    }, {"tpope/vim-surround", lazy = false},
-    {"tpope/vim-commentary", lazy = false}, {
-        "junegunn/fzf.vim",
-        lazy = false,
-        keys = {{"<leader>f", "<cmd>Files<cr>", desc = "fzf"}}
-    }, {"junegunn/fzf", lazy = false}, {"jiangmiao/auto-pairs", lazy = false},
-    {"yuttie/comfortable-motion.vim", lazy = false},
-    {"tpope/vim-fugitive", lazy = false}, {
-        "dense-analysis/ale",
-        lazy = false,
-        config = function()
-            vim.g.ale_fixers = {lua = {'lua-format'}}
-            vim.g.ale_fix_on_save = 1
-            vim.g.ale_lint_on_save = 1
-            vim.g.ale_lint_on_insert_leave = 0
-        end,
-        keys = {
-            {"<leader>fx", "<cmd>ALEFix<cr>", desc = "ale fix"},
-            {"<leader>fl", "<cmd>ALELint<cr>", desc = "ale lint"}
-        }
-    }
+	{
+		"lifepillar/vim-solarized8",
+		config = function()
+			vim.cmd.colorscheme("solarized8")
+			vim.opt.background = "light"
+		end,
+	},
+	{ "neoclide/coc.nvim", build = "yarn install" }, -- autocompletion, TODO: move to separate plugin
+	{
+		"folke/which-key.nvim",
+		config = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+			require("which-key").setup({})
+		end,
+	},
+	{
+		"junegunn/fzf.vim",
+		lazy = false,
+		keys = { { "<leader>f", "<cmd>Files<cr>", desc = "fzf" } },
+		dependencies = { "junegunn/fzf" },
+	}, -- fzf setup
+	{ "jiangmiao/auto-pairs" }, -- autocomplete for parenthesis, brackets, etc
+	{ "yuttie/comfortable-motion.vim" }, -- scrolling motion
+	{ "tpope/vim-fugitive", lazy = false }, -- git plugin
+	-- ale
+	{
+		"dense-analysis/ale",
+		lazy = false,
+		config = function()
+			vim.g.ale_fixers = { lua = { "stylua" } }
+			vim.g.ale_fix_on_save = 1
+			vim.g.ale_lint_on_save = 1
+			vim.g.ale_lint_on_insert_leave = 0
+		end,
+		keys = {
+			{ "<leader>fx", "<cmd>ALEFix<cr>", desc = "ale fix" },
+			{ "<leader>fl", "<cmd>ALELint<cr>", desc = "ale lint" },
+		},
+	}, -- ale
 }
-
