@@ -1,11 +1,4 @@
 return {
-	{
-		"lifepillar/vim-solarized8",
-		config = function()
-			vim.cmd.colorscheme("solarized8")
-			vim.opt.background = "light"
-		end,
-	},
 	{ "neoclide/coc.nvim", build = "yarn install" }, -- autocompletion, TODO: move to separate plugin
 	{
 		"folke/which-key.nvim",
@@ -15,14 +8,6 @@ return {
 			require("which-key").setup({})
 		end,
 	},
-	{
-		"junegunn/fzf.vim",
-		lazy = false,
-		keys = { { "<leader>f", "<cmd>Files<cr>", desc = "fzf" } },
-		dependencies = { "junegunn/fzf" },
-	}, -- fzf setup
-	{ "jiangmiao/auto-pairs" }, -- autocomplete for parenthesis, brackets, etc
-	{ "yuttie/comfortable-motion.vim" }, -- scrolling motion
 	{ "tpope/vim-fugitive", lazy = false }, -- git plugin
 	-- ale
 	{

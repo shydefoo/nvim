@@ -16,6 +16,7 @@ return {
 							{ key = "u", action = "dir_up" },
 							{ key = "s", action = "vsplit" },
 							{ key = "v", action = "split" },
+							{ key = "i", action = "split" },
 							{ key = "t", action = "tabnew" },
 							{ key = "ma", action = "create" },
 							{ key = "md", action = "remove" },
@@ -48,5 +49,20 @@ return {
 		lazy = false,
 		keys = { { "<leader>f", "<cmd>Files<cr>", desc = "fzf" } },
 		dependencies = { "junegunn/fzf" },
+	},
+	{ "jiangmiao/auto-pairs" }, -- autocomplete for parenthesis, brackets, etc
+	{ "yuttie/comfortable-motion.vim" }, -- scrolling motion
+	-- nvim-notify
+	{
+		"rcarriga/nvim-notify",
+		config = function()
+			vim.notify = require("notify")
+		end,
+	},
+	{
+		"vim-airline/vim-airline",
+		config = function()
+			vim.g["airline#extensions#tabline#enabled"] = 1
+		end,
 	},
 }
