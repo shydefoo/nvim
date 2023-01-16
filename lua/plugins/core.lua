@@ -1,5 +1,4 @@
 return {
-	{ "neoclide/coc.nvim", build = "yarn install" }, -- autocompletion, TODO: move to separate plugin
 	{
 		"folke/which-key.nvim",
 		config = function()
@@ -23,5 +22,41 @@ return {
 			{ "<leader>fx", "<cmd>ALEFix<cr>", desc = "ale fix" },
 			{ "<leader>fl", "<cmd>ALELint<cr>", desc = "ale lint" },
 		},
-	}, -- ale
+	},
+	-- nvim-treesitter
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				ensure_installed = { "c", "lua", "vim", "help", "python", "go" },
+				highlight = { enable = true },
+				auto_install = true,
+			})
+		end,
+	},
+	-- session management
+	{
+		"folke/persistence.nvim",
+		config = function()
+			require("persistence").setup()
+		end,
+	},
+	{
+		"neoclide/coc.nvim",
+		build = "yarn install",
+		config = function()
+			wk = require("which-key")
+			wk.register({
+				j = {
+					name = "coc", -- optional group name
+					d = { "<Plug>(coc-definition)", "Jump to definition" },
+					t = { "<Plug>(coc-type-definition)", "Jump to type" },
+					r = { "<Plug>(coc-references)", "Jump to references" },
+					n = { "<Plug>(coc-diagnostic-next-error)", "Jump to next error" },
+					p = { "<Plug>(coc-diagnostic-prev-error)", "Jump to previous error" },
+				},
+			}, { prefix = "<leader>", noremap = false })
+		end,
+	}, -- autocompletion, TODO: move to separate plugin
 }

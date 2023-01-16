@@ -12,7 +12,7 @@
   "diagnostic.displayByAle": true,
   "diagnostic.autoRefresh": true,
   "go": {
-    "path": "/Users/shide.foo/.config/coc/extensions/coc-go-data/bin/gopls",
+    "goplsPath": "gopls",
     "goplsArgs": ["-remote=auto"],
     "buildFlags": []
   }

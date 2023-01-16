@@ -63,6 +63,13 @@ return {
 		"vim-airline/vim-airline",
 		config = function()
 			vim.g["airline#extensions#tabline#enabled"] = 1
+			vim.g.solarized_statusline = "normal"
+		end,
+	},
+	{
+		"vim-airline/vim-airline-themes",
+		config = function()
+			vim.g.airline_theme = "solarized"
 		end,
 	},
 }
