@@ -496,7 +496,6 @@ vim.cmd([[
         return a:cmd . " " . expand("%:p:h") . "/"
     endfunc
     
-    set termguicolors
 ]])
 -- " Don't close window, when deleting a buffer
 -- command! Bclose call <SID>BufcloseCloseIt()
@@ -523,13 +522,4 @@ vim.cmd([[
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.g.coc_status_error_sign = "•"
-vim.g.coc_status_warning_sign = "•"
-vim.g["airline#extensions#coc#enabled"] = 1
-
 vim.g.yankstack_yank_keys = { "y", "yy", "d", "dd" }
-
-vim.g["airline#extensions#ale#enabled"] = 1
-vim.g.ale_sign_error = "**"
-vim.g.ale_sign_warning = "*-"
-vim.g.ale_set_signs = 1

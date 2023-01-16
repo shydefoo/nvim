@@ -2,8 +2,8 @@ local M = {
 	"nvim-tree/nvim-tree.lua",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	opts = {
-		open_on_setup = true,
-		open_on_setup_file = true,
+		open_on_setup = false,
+		open_on_setup_file = false,
 		sort_by = "case_sensitive",
 		view = {
 			side = "right",

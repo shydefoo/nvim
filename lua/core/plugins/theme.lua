@@ -1,9 +1,9 @@
 local settings = require("core.settings")
 
-if settings.theme == "nightfox" then
+if settings.theme == "tokyonight" then
     return {
-        "EdenEast/nightfox.nvim",
-        config = function() require("core.plugins.themes.nightfox") end
+        "folke/tokyonight.nvim",
+        config = function() require("core.plugins.themes.tokyonight") end
 
     }
 elseif settings.theme == "tundra" then

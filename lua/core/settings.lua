@@ -1,6 +1,6 @@
 local M = {}
 
-M.theme = "vim-solarized8"
+M.theme = "tokyonight"
 M.treesitter_ensure_installed = {
 	"bash",
 	"cmake",
@@ -40,6 +40,7 @@ M.mason_tool_installer_ensure_installed = {
 	"black",
 	"prettier",
 	"stylua",
+	"shfmt",
 	-- Linter
 	"eslint_d",
 	"shellcheck",
@@ -48,4 +49,5 @@ M.mason_tool_installer_ensure_installed = {
 	-- DAP
 	"debugpy",
 }
+
 return M
