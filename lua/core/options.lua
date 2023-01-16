@@ -1,3 +1,4 @@
+-- TODO: Port to lua
 vim.cmd([[
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => General
@@ -11,10 +12,6 @@ vim.cmd([[
     
     " Set to auto read when a file is changed from the outside
     set autoread
-    
-    " With a map leader it's possible to do extra key combinations
-    " like <leader>w saves the current file
-    let mapleader = ","
     
     " Fast saving
     nmap <leader>w :w!<cr>
@@ -112,13 +109,6 @@ vim.cmd([[
     if $COLORTERM == 'gnome-terminal'
         set t_Co=256
     endif
-    
-    try
-        colorscheme desert
-    catch
-    endtry
-    
-    set background=dark
     
     " Set extra options when running in GUI mode
     if has("gui_running")
@@ -528,3 +518,7 @@ vim.cmd([[
 --         execute("bdelete! ".l:currentBufNum)
 --     endif
 -- endfunction
+
+-- disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1

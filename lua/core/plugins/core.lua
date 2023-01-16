@@ -1,12 +1,4 @@
 return {
-	{
-		"folke/which-key.nvim",
-		config = function()
-			vim.o.timeout = true
-			vim.o.timeoutlen = 300
-			require("which-key").setup({})
-		end,
-	},
 	{ "tpope/vim-fugitive", lazy = false }, -- git plugin
 	-- ale
 	{
@@ -42,21 +34,4 @@ return {
 			require("persistence").setup()
 		end,
 	},
-	{
-		"neoclide/coc.nvim",
-		build = "yarn install",
-		config = function()
-			wk = require("which-key")
-			wk.register({
-				j = {
-					name = "coc", -- optional group name
-					d = { "<Plug>(coc-definition)", "Jump to definition" },
-					t = { "<Plug>(coc-type-definition)", "Jump to type" },
-					r = { "<Plug>(coc-references)", "Jump to references" },
-					n = { "<Plug>(coc-diagnostic-next-error)", "Jump to next error" },
-					p = { "<Plug>(coc-diagnostic-prev-error)", "Jump to previous error" },
-				},
-			}, { prefix = "<leader>", noremap = false })
-		end,
-	}, -- autocompletion, TODO: move to separate plugin
 }
