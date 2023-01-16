@@ -14,6 +14,10 @@
   "go": {
     "goplsPath": "gopls",
     "goplsArgs": ["-remote=auto"],
-    "buildFlags": []
+    "buildFlags": ["-tags=integration,unit"]
+  },
+   "yaml.schemas": {
+      "kubernetes": "/*.yaml"
   }
+
 }

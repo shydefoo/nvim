@@ -1,5 +1,5 @@
 require("core.globals")
 require("core.lazy")
-require("core.mappings")
 require("core.options")
+require("core.mappings")
 require("core.autocmd")

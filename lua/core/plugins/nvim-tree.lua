@@ -26,6 +26,7 @@ local M = {
 		},
 		renderer = {
 			icons = {
+				git_placement = "after",
 				glyphs = {
 					git = {
 						untracked = "u",
@@ -35,6 +36,7 @@ local M = {
 			group_empty = true,
 		},
 		filters = { dotfiles = true },
+		git = { ignore = false },
 	},
 }
 

@@ -359,8 +359,8 @@ vim.cmd([[
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => Fast editing and reloading of vimrc configs
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    map <leader>e :e! ~/.config/nvim/init.vim<cr>
-    autocmd! bufwritepost ~/.config/nvim/init.vim source ~/.config/nvim/init.vim
+    map <leader>e :e! ~/.config/nvim/init.lua<cr>
+    autocmd! bufwritepost ~/.config/nvim/init.lua source ~/.config/nvim/init.lua
     
     
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -368,7 +368,7 @@ vim.cmd([[
     "    means that you can undo even when you close a buffer/VIM
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     try
-        set undodir=~/.config/nvim/temp_dirs/undodir
+        set undodir=~/.config/nvim/.temp_dirs/undodir
         set undofile
     catch
     endtry
@@ -522,3 +522,14 @@ vim.cmd([[
 -- disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+vim.g.coc_status_error_sign = "•"
+vim.g.coc_status_warning_sign = "•"
+vim.g["airline#extensions#coc#enabled"] = 1
+
+vim.g.yankstack_yank_keys = { "y", "yy", "d", "dd" }
+
+vim.g["airline#extensions#ale#enabled"] = 1
+vim.g.ale_sign_error = "**"
+vim.g.ale_sign_warning = "*-"
+vim.g.ale_set_signs = 1

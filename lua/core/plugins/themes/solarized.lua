@@ -1,4 +1,3 @@
-print("this also works")
 vim.cmd([[colorscheme solarized8]])
 vim.opt.background = "light"
 vim.g["airline#extensions#tabline#enabled"] = 1
