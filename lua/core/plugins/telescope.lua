@@ -28,7 +28,7 @@ local M = {
 				},
 				file_browser = {
 					initial_mode = "normal",
-					hijack_netrw = true,
+					hijack_netrw = false,
 					hidden = true,
 					mappings = {
 						n = {
@@ -56,7 +56,7 @@ local M = {
 				},
 			},
 			defaults = {
-				file_ignore_patterns = { "node_modules", ".terraform", "%.jpg", "%.png" },
+				file_ignore_patterns = { "node_modules", ".terraform", "%.jpg", "%.png", ".git" },
 				mappings = {
 					i = {
 						-- Close on first esc instead of going to normal mode

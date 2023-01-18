@@ -16,7 +16,7 @@ wk.register({
 	-- nvim-tree key-bindings
 	n = {
 		name = "file", -- optional group name
-		n = { "<cmd>Telescope file_browser<cr>", "Toggle Telescope filebrowser" },
+		n = { "<cmd>NvimTreeToggle<cr>", "Toggle nvim tree" },
 		f = { "<cmd>NvimTreeFindFile<cr>", "Find file in tree" },
 	},
 	-- ale mappings
