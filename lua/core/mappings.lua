@@ -16,7 +16,7 @@ wk.register({
 	-- nvim-tree key-bindings
 	n = {
 		name = "file", -- optional group name
-		n = { "<cmd>NvimTreeToggle<cr>", "Toggle NvimTree" },
+		n = { "<cmd>Telescope file_browser<cr>", "Toggle Telescope filebrowser" },
 		f = { "<cmd>NvimTreeFindFile<cr>", "Find file in tree" },
 	},
 	-- ale mappings
@@ -25,7 +25,13 @@ wk.register({
 		x = { "<cmd>ALEFix<cr>", "Ale Fix" },
 		l = { "<cmd>ALELint<cr>", "Ale lint" },
 	},
-}, { prefix = "<leader>", silent = false })
+	f = {
+		name = "Files",
+		-- g = { "<cmd>Telescope live_grep<cr>", "live grep" },
+		b = { "<cmd>Telescope file_browser<cr>", "File Browser" },
+		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+	},
+}, { prefix = "<leader>", silent = true })
 
 -- wk.register({
 -- 	["<Tab>"] = { '<expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\\<Tab>"' },
@@ -57,3 +63,5 @@ wk.register({
 		u = { "<cmd>Gitsigns undo_stage_hunk<cr>" },
 	},
 }, { prefix = "<leader>" })
+
+-- Telescope

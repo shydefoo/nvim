@@ -26,7 +26,10 @@
    "yaml.schemas": {
       "kubernetes": "/*.yaml"
   },
-  "coc.preferences.maxFileSize": "11MB"
+  "coc.preferences.maxFileSize": "11MB",
+  "python.linting.enabled": false,
+  "python.linting.mypyArgs":["--implicit-optional"]
+
 
 
 }

@@ -426,13 +426,6 @@ vim.cmd([[
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
     
-    
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " => Omni complete functions
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-    
-    
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => Ack searching and cope displaying
     "    requires ack.vim - it's much better than vimgrep/grep
@@ -443,13 +436,13 @@ vim.cmd([[
     endif
     
     " When you press gv you Ack after the selected text
-    vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
+    "-- vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
     
     " Open Ack and put the cursor in the right position
-    map <leader>g :Ack 
+    "map <leader>g :Ack 
     
     " When you press <leader>r you can search and replace the selected text
-    vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
+    "vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
     
     " Do :help cope if you are unsure what cope is. It's super useful!
     "
@@ -496,6 +489,7 @@ vim.cmd([[
         return a:cmd . " " . expand("%:p:h") . "/"
     endfunc
     
+    let g:localvimrc_whitelist=['/Users/shide.foo/repos/']
 ]])
 -- " Don't close window, when deleting a buffer
 -- command! Bclose call <SID>BufcloseCloseIt()
@@ -518,8 +512,6 @@ vim.cmd([[
 --     endif
 -- endfunction
 
--- disable netrw
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 vim.g.yankstack_yank_keys = { "y", "yy", "d", "dd" }
+
+-- vim.g.localvimrc_whitelist = { "/Users/shide.foo/repos/" }

@@ -5,6 +5,7 @@ local M = {
 		open_on_setup = false,
 		open_on_setup_file = false,
 		sort_by = "case_sensitive",
+		hijack_netrw = false,
 		view = {
 			side = "right",
 			mappings = {
