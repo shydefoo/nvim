@@ -6,6 +6,16 @@ local M = {
 		open_on_setup_file = false,
 		sort_by = "case_sensitive",
 		view = {
+			float = {
+				enable = true,
+				open_win_config = {
+					relative = "editor",
+					width = 90,
+					height = 60,
+					row = (vim.api.nvim_list_uis()[1].height - 60) * 0.4,
+					col = (vim.api.nvim_list_uis()[1].width - 90) * 0.5,
+				},
+			},
 			side = "right",
 			mappings = {
 				list = {
