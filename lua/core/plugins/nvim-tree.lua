@@ -5,6 +5,7 @@ local M = {
 		open_on_setup = false,
 		open_on_setup_file = false,
 		sort_by = "case_sensitive",
+		hijack_netrw = false,
 		view = {
 			float = {
 				enable = true,
@@ -31,6 +32,7 @@ local M = {
 					{ key = "mr", action = "system_open" },
 					{ key = "C", action = "cd" },
 					{ key = "I", action = "toggle_dotfiles" },
+					{ key = "?", action = "toggle_help" },
 				},
 			},
 		},

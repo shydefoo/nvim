@@ -27,8 +27,8 @@ local M = {
 					require("telescope.themes").get_dropdown({}),
 				},
 				file_browser = {
-					initial_mode = "normal",
-					hijack_netrw = false,
+					initial_mode = "insert",
+					hijack_netrw = true,
 					hidden = true,
 					mappings = {
 						n = {
@@ -72,9 +72,11 @@ local M = {
 		telescope.load_extension("heading")
 		telescope.load_extension("make")
 
-		vim.keymap.set("n", "<leader>f", "<cmd>lua require('telescope.builtin').find_files()<cr>")
+		vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files hidden=true<cr>")
 		vim.keymap.set("n", "<leader>g", "<cmd>Telescope live_grep<cr>")
+		vim.keymap.set("n", "<leader>b", "<cmd>Telescope buffer<cr>")
 		vim.keymap.set("v", "gv", "zy:Telescope grep_string default_text=<C-r>z<cr>", { noremap = true, silent = true })
+		vim.keymap.set("n", "<leader>o", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true })
 	end,
 }
 

@@ -23,9 +23,6 @@
     "goplsArgs": ["-remote=auto"],
     "buildFlags": ["-tags=integration,unit"]
   },
-   "yaml.schemas": {
-      "kubernetes": "/*.yaml"
-  },
   "coc.preferences.maxFileSize": "11MB",
   "python.linting.enabled": false,
   "python.linting.mypyArgs":["--implicit-optional"]

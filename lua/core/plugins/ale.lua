@@ -6,6 +6,7 @@ local M = {
 			lua = { "stylua" },
 			sh = { "shfmt" },
 			python = { "black" },
+			go = { "gofmt" },
 		}
 		vim.g.ale_linters = {
 			javascript = { "eslint" },

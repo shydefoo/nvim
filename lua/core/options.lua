@@ -266,19 +266,6 @@ vim.cmd([[
     
     
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " => Spell checking
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " Pressing ,ss will toggle and untoggle spell checking
-    map <leader>ss :setlocal spell!<cr>
-    
-    " Shortcuts using <leader>
-    map <leader>sn ]s
-    map <leader>sp [s
-    map <leader>sa zg
-    map <leader>s? z=
-    
-    
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => Misc
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " Remove the Windows ^M - when the encodings gets messed up
@@ -513,5 +500,5 @@ vim.cmd([[
 -- endfunction
 
 vim.g.yankstack_yank_keys = { "y", "yy", "d", "dd" }
-
--- vim.g.localvimrc_whitelist = { "/Users/shide.foo/repos/" }
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1

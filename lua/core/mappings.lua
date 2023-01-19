@@ -56,12 +56,9 @@ nmap <C-n> <Plug>yankstack_substitute_newer_paste
 
 -- git signs mapping
 vim.keymap.set("n", "<leader>d", "<cmd>Gitsigns toggle_signs<cr>", { silent = true })
-wk.register({
-	name = "Gitsigns",
-	h = {
-		s = { "<cmd>Gitsigns stage_hunk<cr>" },
-		u = { "<cmd>Gitsigns undo_stage_hunk<cr>" },
-	},
-}, { prefix = "<leader>" })
+vim.keymap.set("n", "<leader>hs", "<cmd>Gitsigns stage_hunk<cr>", { silent = true })
+vim.keymap.set("n", "<leader>hu", "<cmd>Gitsigns undo_stage_hunk<cr>", { silent = true })
+vim.keymap.set("n", "<leader>hp", "<cmd>Gitsigns preview_hunk_inline<cr>", { silent = true })
+vim.keymap.set("n", "<leader>hx", "<cmd>Gitsigns reset_hunk<cr>", { silent = true })
 
 -- Telescope
