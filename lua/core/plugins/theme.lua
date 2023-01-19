@@ -19,8 +19,20 @@ elseif settings.theme == "vim-solarized8" then
 		{
 			"lifepillar/vim-solarized8",
 			config = function()
-				require("core.plugins.themes.solarized")
+				local M = require("core.plugins.themes.modulating")
+				if pcall(M.set_theme(os.date("*t"))) then
+					print("no error")
+				else
+					require("core.plugins.themes.solarized")
+				end
 			end,
 		},
+	}
+else
+	return {
+		"EdenEast/nightfox.nvim",
+		config = function()
+			require("core.plugins.themes.modulating").set_theme(os.date("*t"))
+		end,
 	}
 end

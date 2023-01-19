@@ -40,7 +40,7 @@ local M = {
 							["mm"] = fb_actions.move,
 							["y"] = fb_actions.copy,
 							["A"] = fb_actions.select_all,
-							["c"] = fb_actions.change_cwd,
+							["C"] = fb_actions.change_cwd,
 							["q"] = actions.close,
 							["u"] = fb_actions.goto_parent_dir,
 						},
