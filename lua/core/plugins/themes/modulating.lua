@@ -10,6 +10,7 @@ M.set_theme = function(time)
 	else
 		vim.cmd([[colorscheme Nightfox]])
 	end
+	vim.g.airline_theme = "solarized"
 end
 
 return M

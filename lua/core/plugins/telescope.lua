@@ -54,9 +54,19 @@ local M = {
 				buffers = {
 					ignore_current_buffer = true,
 				},
+				live_grep = {
+					additional_args = function(opts)
+						return { "--hidden" }
+					end,
+				},
+				grep_string = {
+					additional_args = function(opts)
+						return { "--hidden" }
+					end,
+				},
 			},
 			defaults = {
-				file_ignore_patterns = { "node_modules", ".terraform", "%.jpg", "%.png", ".git" },
+				file_ignore_patterns = { "node_modules", ".terraform", "%.jpg", "%.png", ".git/" },
 				mappings = {
 					i = {
 						-- Close on first esc instead of going to normal mode
@@ -72,11 +82,17 @@ local M = {
 		telescope.load_extension("heading")
 		telescope.load_extension("make")
 
-		vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files hidden=true<cr>")
+		-- vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files hidden=true<cr>")
 		vim.keymap.set("n", "<leader>g", "<cmd>Telescope live_grep<cr>")
 		vim.keymap.set("n", "<leader>b", "<cmd>Telescope buffer<cr>")
 		vim.keymap.set("v", "gv", "zy:Telescope grep_string default_text=<C-r>z<cr>", { noremap = true, silent = true })
 		vim.keymap.set("n", "<leader>o", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true })
+		vim.keymap.set(
+			"n",
+			"<leader>f",
+			"<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>",
+			{ noremap = true, silent = true }
+		)
 	end,
 }
 
