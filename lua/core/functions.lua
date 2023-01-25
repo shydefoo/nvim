@@ -1,0 +1,12 @@
+-- local color_scheme_auto_update = function()
+-- 	-- Create a timer handle (implementation detail: uv_timer_t).
+-- 	local timer = vim.loop.new_timer()
+-- 	local i = 0
+-- 	-- Waits 1000ms, then repeats every 750ms until timer:close().
+-- 	timer:start(1000, 6000, function()
+-- 		print("timer invoked! i=" .. tostring(i))
+-- 	end)
+-- 	print("sleeping")
+-- end
+
+-- color_scheme_auto_update()
