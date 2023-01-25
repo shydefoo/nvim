@@ -6,7 +6,9 @@ local M = {
 		{ "kyazdani42/nvim-web-devicons", name = "kyazdani42-nvim-web-devicons" },
 	},
 	config = function()
-		require("octo").setup()
+		require("octo").setup({
+			always_select_remote = "true",
+		})
 	end,
 }
 

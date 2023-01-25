@@ -24,10 +24,18 @@ local M = {
 				["repo.or.cz"] = require("gitlinker.hosts").get_repoorcz_type_url,
 				["git.kernel.org"] = require("gitlinker.hosts").get_cgit_type_url,
 				["git.savannah.gnu.org"] = require("gitlinker.hosts").get_cgit_type_url,
+				["source.golabs.io"] = require("gitlinker.hosts").get_gitlab_type_url,
 			},
 			-- default mapping to call url generation with action_callback
 			mappings = "<leader>gy",
 		})
+
+		vim.api.nvim_set_keymap(
+			"n",
+			"<leader>gb",
+			'<cmd>lua require"gitlinker".get_buf_range_url("n", {action_callback = require"gitlinker.actions".open_in_browser})<cr>',
+			{ silent = true }
+		)
 	end,
 }
 

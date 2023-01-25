@@ -1,6 +1,9 @@
 local M = {
 	"neoclide/coc.nvim",
 	build = "yarn install",
+	dependencies = {
+		{ "vim-airline/vim-airline-themes" },
+	},
 	config = function()
 		vim.g.coc_global_extensions = {
 			"coc-pyright",
@@ -13,6 +16,6 @@ local M = {
 		vim.g.coc_status_warning_sign = ">-"
 		vim.g["airline#extensions#coc#enabled"] = 1
 	end,
-} -- autocompletion, TODO: move to separate plugin
+}
 
 return M

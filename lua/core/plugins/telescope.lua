@@ -58,11 +58,13 @@ local M = {
 					additional_args = function(opts)
 						return { "--hidden" }
 					end,
+					word_match = "-w",
 				},
 				grep_string = {
 					additional_args = function(opts)
 						return { "--hidden" }
 					end,
+					word_match = "-w",
 				},
 			},
 			defaults = {

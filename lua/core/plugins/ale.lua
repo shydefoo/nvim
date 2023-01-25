@@ -7,6 +7,7 @@ local M = {
 			sh = { "shfmt" },
 			python = { "black" },
 			go = { "gofmt" },
+			terraform = { "terraform" },
 		}
 		vim.g.ale_linters = {
 			javascript = { "eslint" },

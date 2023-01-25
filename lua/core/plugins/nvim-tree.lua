@@ -6,6 +6,7 @@ local M = {
 		open_on_setup_file = false,
 		sort_by = "case_sensitive",
 		hijack_netrw = false,
+		disable_netrw = false,
 		view = {
 			float = {
 				enable = true,

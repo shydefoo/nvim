@@ -501,4 +501,4 @@ vim.cmd([[
 
 vim.g.yankstack_yank_keys = { "y", "yy", "d", "dd" }
 vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_netrwPlugin = 1

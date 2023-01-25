@@ -19,20 +19,19 @@ elseif settings.theme == "vim-solarized8" then
 		{
 			"lifepillar/vim-solarized8",
 			config = function()
-				local M = require("core.plugins.themes.modulating")
-				if pcall(M.set_theme(os.date("*t"))) then
-					print("no error")
-				else
-					require("core.plugins.themes.solarized")
-				end
+				require("core.plugins.themes.solarized")
 			end,
 		},
 	}
 else
 	return {
 		"EdenEast/nightfox.nvim",
+		dependencies = {
+			{ "vim-airline/vim-airline-themes" },
+			{ "neoclide/coc.nvim" },
+		},
 		config = function()
-			require("core.plugins.themes.modulating").set_theme(os.date("*t"))
+			require("core.plugins.themes.modulating").set_theme()
 		end,
 	}
 end
