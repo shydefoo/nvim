@@ -1,5 +1,21 @@
 <h1 align="center">My Nvim Configuration</h1>
 
+<div align="center"><p>
+    <a href="https://github.com/neovim/neovim">
+      <img src="https://img.shields.io/badge/Neovim-0.8.0-blueviolet.svg?style=flat-square&logo=Neovim&color=90E59A&logoColor=white" alt="Neovim"/>
+    </a>
+    <a href="https://github.com/shydefoo/nvim/pulse">
+      <img src="https://img.shields.io/github/last-commit/shydefoo/nvim" alt="Last commit"/>
+    </a>
+    <a href="https://github.com/shydefoo/nvim/actions/workflows/ci.yaml">
+      <img src="https://github.com/shydefoo/nvim/actions/workflows/ci.yaml/badge.svg" alt="CI Status"/>
+    </a>
+    <a href="https://github.com/shydefoo/nvim/blob/main/LICENSE">
+      <img src="https://img.shields.io/github/license/shydefoo/nvim?style=flat-square&logo=MIT&label=License" alt="License"/>
+    </a>
+</p>
+</div>
+
 ![image](./docs/neovim_alpha.png)
 
 My nvim configs inspired by https://github.com/Allaman/nvim. I decided that my neovim configurations needed an upgrade, so this is a refresh to port everything over to lua.
