@@ -15,7 +15,7 @@ local M = {
 				files = { "src/parser.c" },
 			},
 			filetype = "gotmpl",
-			used_by = { "gohtmltmpl", "gotexttmpl", "gotmpl", "yaml" },
+			used_by = { "gohtmltmpl", "gotexttmpl", "gotmpl" },
 		}
 	end,
 }

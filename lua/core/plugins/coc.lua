@@ -10,7 +10,8 @@ local M = {
 			"coc-go",
 			"coc-yaml",
 			"coc-json",
-			"coc-lua",
+			"coc-sumneko-lua",
+			"coc-solargraph",
 		}
 		vim.g.coc_status_error_sign = ">>"
 		vim.g.coc_status_warning_sign = ">-"

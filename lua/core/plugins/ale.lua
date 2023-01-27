@@ -7,7 +7,9 @@ local M = {
 			sh = { "shfmt" },
 			python = { "black" },
 			go = { "gofmt" },
+			json = { "jq" },
 			terraform = { "terraform" },
+			ruby = { "prettier", "rubocop", "rufo" },
 		}
 		vim.g.ale_linters = {
 			javascript = { "eslint" },
@@ -16,6 +18,7 @@ local M = {
 			sh = { "language_server", "shellcheck" },
 			lua = { "luac" },
 			terraform = { "tflint", "terraform-ls" },
+			ruby = { "rubocop" },
 		}
 		vim.g.ale_fix_on_save = 1
 		vim.g.ale_lint_on_save = 0

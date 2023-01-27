@@ -10,6 +10,16 @@
       "disabledFeatures": [
           "workspaceFolders"
       ]
+    },
+    "terraform": {
+        "command": "terraform-ls",
+        "args": ["serve"],
+        "filetypes": [
+            "terraform",
+            "tf"
+        ],
+        "initializationOptions": {},
+        "settings": {}
     }
   },
   "diagnostic.displayByAle": true,
@@ -25,7 +35,9 @@
   },
   "coc.preferences.maxFileSize": "11MB",
   "python.linting.enabled": false,
-  "python.linting.mypyArgs":["--implicit-optional"]
+  "python.linting.mypyArgs":["--implicit-optional"],
+  "sumneko-lua.enableNvimLuaDev": true,
+  "snippets.ultisnips.pythonPrompt": false,
 
 
 
