@@ -10,22 +10,22 @@ M.set_theme = function()
 			if 7 <= time.hour and time.hour <= 9 and vim.g.colors_name ~= "dawnfox" then
 				-- 0700 to 0959
 				print("use dawnfox")
-				vim.cmd([[colorscheme Dawnfox]])
+				vim.cmd([[colorscheme dawnfox]])
 				vim.g.airline_theme = "solarized"
 			elseif 10 <= time.hour and time.hour <= 15 and vim.g.colors_name ~= "dayfox" then
 				-- 1000 to 1559
 				print("use dayfox")
-				vim.cmd([[colorscheme Dayfox]])
+				vim.cmd([[colorscheme dayfox]])
 				vim.g.airline_theme = "solarized"
 			elseif 16 <= time.hour and time.hour <= 19 and vim.g.colors_name ~= "duskfox" then
 				-- 1600 to 1959
 				print("use duskfox")
-				vim.cmd([[colorscheme Duskfox]])
+				vim.cmd([[colorscheme duskfox]])
 				vim.g.airline_theme = "solarized"
 			elseif (20 <= time.hour or time.hour <= 6) and vim.g.colors_name ~= "nightfox" then
 				-- 2000 to 0659
 				print("use nightfox")
-				vim.cmd([[colorscheme Nightfox]])
+				vim.cmd([[colorscheme dightfox]])
 				vim.g.airline_theme = "deus"
 			end
 		end)
