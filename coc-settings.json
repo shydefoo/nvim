@@ -31,7 +31,7 @@
   "go": {
     "goplsPath": "gopls",
     "goplsArgs": ["-remote=auto"],
-    "buildFlags": ["-tags=integration,unit"]
+    "buildFlags": ["-tags=integration,unit,migrate"]
   },
   "coc.preferences.maxFileSize": "11MB",
   "python.linting.enabled": false,
