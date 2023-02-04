@@ -502,3 +502,7 @@ vim.cmd([[
 vim.g.yankstack_yank_keys = { "y", "yy", "d", "dd" }
 vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1
+
+-- set treesitter foldmethod
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
