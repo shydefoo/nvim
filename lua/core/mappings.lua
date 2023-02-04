@@ -1,5 +1,5 @@
 local wk = require("which-key")
-
+local func = require("core.functions")
 wk.register({
 	-- coc mappings
 	j = {

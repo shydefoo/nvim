@@ -1,4 +1,3 @@
-func = require("core.functions")
 local M = {
 	"neoclide/coc.nvim",
 	build = "yarn install",
