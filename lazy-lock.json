@@ -49,6 +49,7 @@
   "vim-dispatch": { "branch": "master", "commit": "00e77d90452e3c710014b26dc61ea919bc895e92" },
   "vim-fugitive": { "branch": "master", "commit": "2febbe1f00be04f16daa6464cb39214a8566ec4b" },
   "vim-go": { "branch": "master", "commit": "eec8223171cca6e662dfca22ddde93c3a81f66d0" },
+  "vim-helm": { "branch": "master", "commit": "c2e7b85711d410e1d73e64eb5df7b70b1c4c10eb" },
   "vim-localvimrc": { "branch": "master", "commit": "6cc9f9ffaaf44b45bd5268f8a541363619bf1b13" },
   "vim-markdown": { "branch": "master", "commit": "df4be8626e2c5b2a42eb60e1f100fce469b81f7d" },
   "vim-obsession": { "branch": "master", "commit": "fe9d3e1a9a50171e7d316a52e1e56d868e4c1fe5" },
