@@ -25,7 +25,7 @@ M.set_theme = function()
 			elseif (20 <= time.hour or time.hour <= 6) and vim.g.colors_name ~= "nightfox" then
 				-- 2000 to 0659
 				print("use nightfox")
-				vim.cmd([[colorscheme dightfox]])
+				vim.cmd([[colorscheme nightfox]])
 				vim.g.airline_theme = "deus"
 			end
 		end)
