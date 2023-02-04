@@ -1,3 +1,4 @@
+func = require("core.functions")
 local M = {
 	"neoclide/coc.nvim",
 	build = "yarn install",
@@ -16,7 +17,7 @@ local M = {
 		vim.g.coc_status_error_sign = ">>"
 		vim.g.coc_status_warning_sign = ">-"
 		vim.g["airline#extensions#coc#enabled"] = 1
-		-- require("after.autoload.coc.ui")
+		vim.keymap.set("n", "<leader>rr", "<Plug>(coc-refactor)", { noremap = false })
 	end,
 }
 
