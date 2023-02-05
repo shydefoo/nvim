@@ -36,6 +36,7 @@ M.mason_tool_installer_ensure_installed = {
 	"terraform-ls",
 	"yaml-language-server",
 	"gopls",
+	"solargraph",
 	-- Formatter
 	"black",
 	"prettier",

@@ -1,12 +1,16 @@
 {
   "suggest.noselect": true,
+  "suggest.floatConfig": {
+      "border": true,
+      "rounded": true,
+  },
+  "suggest.removeDuplicateItems": true,
   "languageserver": {
     "golang": {
       "command": "gopls",
       "args": ["-remote=auto"],
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/", "*/**/go.mod"],
       "filetypes": ["go"],
-      "disableDiagnostics": false,
       "disabledFeatures": [
           "workspaceFolders"
       ]
@@ -22,12 +26,13 @@
         "settings": {}
     }
   },
-  "diagnostic.displayByAle": true,
+  "diagnostic.displayByAle": false,
   "diagnostic.autoRefresh": true,
   "diagnostic.checkCurrentLine": false,
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false,
   "diagnostic.enable": true,
+  "diagnostic.enableMessage": "never",
   "go": {
     "goplsPath": "gopls",
     "goplsArgs": ["-remote=auto"],

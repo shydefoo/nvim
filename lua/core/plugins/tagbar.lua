@@ -1,0 +1,29 @@
+local M = {
+	"preservim/tagbar",
+	config = function()
+		vim.keymap.set("n", "<F8>", "<cmd>TagbarToggle<cr>", { silent = true })
+		vim.g.tagbar_type_go = {
+			ctagstype = "go",
+			kinds = {
+				"p:package",
+				"i:imports:1",
+				"c:constants",
+				"v:variables",
+				"t:types",
+				"n:interfaces",
+				"w:fields",
+				"e:embedded",
+				"m:methods",
+				"r:constructor",
+				"f:functions",
+			},
+			ctagsbin = "gotags",
+			ctagsargs = "-sort -silent",
+			sro = ".",
+			kind2scope = { t = "ctype", n = "ntype" },
+			scope2kind = { ctype = "t", ntype = "n" },
+		}
+	end,
+}
+
+return M

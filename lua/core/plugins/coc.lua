@@ -16,6 +16,7 @@ local M = {
 		vim.g.coc_status_error_sign = ">>"
 		vim.g.coc_status_warning_sign = ">-"
 		vim.g["airline#extensions#coc#enabled"] = 1
+		vim.keymap.set("n", "<leader>rr", "<Plug>(coc-refactor)", { noremap = false })
 	end,
 }
 

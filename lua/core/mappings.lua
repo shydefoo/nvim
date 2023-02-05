@@ -1,5 +1,5 @@
 local wk = require("which-key")
-
+local func = require("core.functions")
 wk.register({
 	-- coc mappings
 	j = {
@@ -66,3 +66,10 @@ vim.cmd([[
 let g:coc_snippet_next = '<C-l>'
 let g:coc_snippet_prev = '<C-h>'
 ]])
+
+function COC_VISUAL_REPLACE()
+	local text = func.get_visual_selection()
+	local command = "CocSearch " .. text
+	vim.cmd(command)
+end
+vim.keymap.set("v", "<leader>r", [[:<C-u>call v:lua.COC_VISUAL_REPLACE()<CR>]])
