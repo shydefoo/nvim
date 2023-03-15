@@ -33,16 +33,15 @@
   "diagnostic.virtualTextCurrentLineOnly": false,
   "diagnostic.enable": true,
   "diagnostic.enableMessage": "never",
-  "go": {
-    "goplsPath": "gopls",
-    "goplsArgs": ["-remote=auto"],
-    "buildFlags": ["-tags=integration,unit,migrate"]
-  },
-  "coc.preferences.maxFileSize": "11MB",
+  "coc.preferences.maxFileSize": "12MB",
   "python.linting.enabled": false,
   "python.linting.mypyArgs":["--implicit-optional"],
   "sumneko-lua.enableNvimLuaDev": true,
   "snippets.ultisnips.pythonPrompt": false,
+  "snippets.extends": {
+      "helm": ["kubernetes"]
+  },
+  "python.formatting.blackArgs": ["--line-length 120", "--skip-string-normalization"]
 
 
 

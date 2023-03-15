@@ -17,7 +17,7 @@ local M = {
 			go = { "golangci-lint" },
 			sh = { "language_server", "shellcheck" },
 			lua = { "luac" },
-			terraform = { "tflint", "terraform-ls" },
+			terraform = { "tflint", "terraform_ls", "terraform" },
 			ruby = { "rubocop" },
 		}
 		vim.g.ale_fix_on_save = 1

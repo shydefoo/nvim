@@ -7,7 +7,6 @@ local M = {
 	config = function()
 		vim.g.coc_global_extensions = {
 			"coc-pyright",
-			"coc-go",
 			"coc-yaml",
 			"coc-json",
 			"coc-sumneko-lua",
