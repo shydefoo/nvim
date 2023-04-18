@@ -26,18 +26,6 @@ M.treesitter_ensure_installed = {
 	"sql",
 }
 M.mason_tool_installer_ensure_installed = {
-	-- LSP
-	"bash-language-server",
-	"dockerfile-language-server",
-	"json-lsp",
-	"marksman",
-	"typescript-language-server",
-	"lua-language-server",
-	"pyright",
-	"terraform-ls",
-	"yaml-language-server",
-	"gopls",
-	"solargraph",
 	-- Formatter
 	"black",
 	"prettier",
@@ -50,6 +38,21 @@ M.mason_tool_installer_ensure_installed = {
 	"yamllint",
 	-- DAP
 	"debugpy",
+}
+
+M.lsp_servers = {
+	-- LSP
+	"bashls",
+	"dockerls",
+	"jsonls",
+	"marksman",
+	"tsserver",
+	"lua-ls",
+	"pyright",
+	"terraformls",
+	"yamlls",
+	"gopls",
+	"solargraph",
 }
 
 return M
