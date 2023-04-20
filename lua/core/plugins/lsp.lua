@@ -1,6 +1,6 @@
 local M = {
 	"neovim/nvim-lspconfig",
-	enabled = false,
+	enabled = true,
 	dependencies = {
 		"onsails/lspkind-nvim",
 		{ "folke/neodev.nvim", config = true },
