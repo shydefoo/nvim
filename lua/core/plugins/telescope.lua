@@ -73,6 +73,11 @@ local M = {
 					i = {
 						-- Close on first esc instead of going to normal mode
 						-- https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/mappings.lua
+						["<C-o>"] = function(prompt_bufnr)
+							require("telescope.actions").select_default(prompt_bufnr)
+							require("telescope.builtin").resume()
+						end,
+						["<C-q>"] = actions.send_to_qflist,
 					},
 				},
 				sorting_strategy = "ascending",
@@ -85,7 +90,7 @@ local M = {
 		telescope.load_extension("make")
 
 		-- vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files hidden=true<cr>")
-		vim.keymap.set("n", "<leader>g", "<cmd>Telescope live_grep<cr>")
+		-- vim.keymap.set("n", "<leader>g", "<cmd>Telescope live_grep<cr>")
 		vim.keymap.set("n", "<leader>b", "<cmd>Telescope buffer<cr>")
 		vim.keymap.set("v", "gv", "zy:Telescope grep_string default_text=<C-r>z<cr>", { noremap = true, silent = true })
 		vim.keymap.set("n", "<leader>o", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true })

@@ -17,7 +17,7 @@ wk.register({
 	n = {
 		name = "file", -- optional group name
 		n = { "<cmd>NvimTreeToggle<cr>", "Toggle nvim tree" },
-		f = { "<cmd>NvimTreeFindFile<cr>", "Find file in tree" },
+		f = { "<cmd>NvimTreeFindFileToggle<cr>", "Find file in tree" },
 	},
 	-- ale mappings
 	a = {
@@ -73,3 +73,34 @@ function COC_VISUAL_REPLACE()
 	vim.cmd(command)
 end
 vim.keymap.set("v", "<leader>r", [[:<C-u>call v:lua.COC_VISUAL_REPLACE()<CR>]])
+
+vim.cmd([[
+  nnoremap <silent> K :call ShowDocumentation()<CR>
+  " Show hover when provider exists, fallback to vim's builtin behavior.
+  function! ShowDocumentation()
+    if CocAction('hasProvider', 'hover')
+      call CocActionAsync('definitionHover')
+    else
+      call feedkeys('K', 'in')
+    endif
+  endfunction
+]])
+
+-- https://github.com/nvim-telescope/telescope.nvim/issues/814#issuecomment-1238510694
+vim.cmd([[
+function!   QuickFixOpenAll()
+    if empty(getqflist())
+        return
+    endif
+    let s:prev_val = ""
+    for d in getqflist()
+        let s:curr_val = bufname(d.bufnr)
+        if (s:curr_val != s:prev_val)
+            exec "edit " . s:curr_val
+        endif
+        let s:prev_val = s:curr_val
+    endfor
+endfunction
+]])
+
+vim.api.nvim_set_keymap("n", "<leader>ka", ":call QuickFixOpenAll()<CR>", { noremap = true, silent = false })

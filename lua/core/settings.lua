@@ -23,6 +23,7 @@ M.treesitter_ensure_installed = {
 	"toml",
 	"vim",
 	"yaml",
+	"sql",
 }
 M.mason_tool_installer_ensure_installed = {
 	-- LSP

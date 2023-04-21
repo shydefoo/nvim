@@ -29,6 +29,7 @@ local M = {
 		vim.g.ale_linters_explicit = 1
 		vim.g.ale_set_signs = 1
 		vim.g.ale_python_flake8_options = "--max-line-length=120"
+		vim.g.ale_python_flake8_executable = "/Users/shide.foo/.pyenv/versions/3.7.8/bin/flake8"
 		-- vim.g.ale_pattern_options = {
 		-- 	[".py"] = { ale_enabled = 0 },
 		-- 	[".go"] = { ale_enabled = 0 },
