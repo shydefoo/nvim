@@ -74,17 +74,17 @@ function COC_VISUAL_REPLACE()
 end
 vim.keymap.set("v", "<leader>r", [[:<C-u>call v:lua.COC_VISUAL_REPLACE()<CR>]])
 
-vim.cmd([[
-  nnoremap <silent> K :call ShowDocumentation()<CR>
-  " Show hover when provider exists, fallback to vim's builtin behavior.
-  function! ShowDocumentation()
-    if CocAction('hasProvider', 'hover')
-      call CocActionAsync('definitionHover')
-    else
-      call feedkeys('K', 'in')
-    endif
-  endfunction
-]])
+-- vim.cmd([[
+--   nnoremap <silent> K :call ShowDocumentation()<CR>
+--   " Show hover when provider exists, fallback to vim's builtin behavior.
+--   function! ShowDocumentation()
+--     if CocAction('hasProvider', 'hover')
+--       call CocActionAsync('definitionHover')
+--     else
+--       call feedkeys('K', 'in')
+--     endif
+--   endfunction
+-- ]])
 
 -- https://github.com/nvim-telescope/telescope.nvim/issues/814#issuecomment-1238510694
 vim.cmd([[
