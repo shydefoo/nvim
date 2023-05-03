@@ -1,6 +1,6 @@
 local M = {
 	"dense-analysis/ale",
-	enabled = false,
+	enabled = true,
 	lazy = false,
 	config = function()
 		vim.g.ale_fixers = {
