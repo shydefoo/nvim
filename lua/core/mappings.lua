@@ -67,13 +67,6 @@ vim.keymap.set("n", "<leader>hx", "<cmd>Gitsigns reset_hunk<cr>", { silent = tru
 -- let g:coc_snippet_prev = '<C-h>'
 -- ]])
 
-function COC_VISUAL_REPLACE()
-	local text = func.get_visual_selection()
-	local command = "CocSearch " .. text
-	vim.cmd(command)
-end
-vim.keymap.set("v", "<leader>r", [[:<C-u>call v:lua.COC_VISUAL_REPLACE()<CR>]])
-
 -- vim.cmd([[
 --   nnoremap <silent> K :call ShowDocumentation()<CR>
 --   " Show hover when provider exists, fallback to vim's builtin behavior.
