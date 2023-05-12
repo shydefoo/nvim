@@ -10,8 +10,8 @@ local M = {
 	config = function()
 		require("mason").setup({})
 
-		-- TODO: https://github.com/Allaman/nvim/issues/37
-		require("mason-lspconfig").setup({})
+		-- install LSPs
+		require("mason-lspconfig").setup({ ensure_installed = settings.lsp_servers })
 
 		require("mason-tool-installer").setup({
 			ensure_installed = settings.mason_tool_installer_ensure_installed,

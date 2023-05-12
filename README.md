@@ -35,8 +35,7 @@ Some options are still configured using vimscript, but the rest of the plugins a
 * Zen mode using [goyo](https://github.com/junegunn/goyo.vim)
 
 ### Coding
-* Completion engine using [coc-nvim](https://github.com/neoclide/coc.nvim)
-* Linting and Fixing by [ALE](https://github.com/dense-analysis/ale)
+* Completion engine using [nvim-lspconfig](./lua/core/plugins/lsp.lua)
 * Enhanced highlighting using [nvim-tree-sitter](https://github.com/nvim-treesitter/nvim-treesitter)
 * Go code tools for extra go functions like GoRename via [vim-go](https://github.com/fatih/vim-go)
 * Package management for linters, lsps, formatters via [Mason](https://github.com/williamboman/mason.nvim#installation)

@@ -1,5 +1,7 @@
+-- coc is disabled
 local M = {
 	"neoclide/coc.nvim",
+	enabled = false,
 	build = "yarn install",
 	dependencies = {
 		{ "vim-airline/vim-airline-themes" },
