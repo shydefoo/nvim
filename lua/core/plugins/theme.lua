@@ -29,7 +29,6 @@ else
 		dependencies = {
 			{ "vim-airline/vim-airline" },
 			{ "vim-airline/vim-airline-themes" },
-			{ "neoclide/coc.nvim" },
 		},
 		config = function()
 			require("core.plugins.themes.modulating").set_theme()
