@@ -8,14 +8,15 @@ nls.setup({
 			extra_args = { "--max-line-length=120" },
 		}),
 		nls.builtins.diagnostics.eslint_d,
-		nls.builtins.diagnostics.golangci_lint,
+		-- nls.builtins.diagnostics.golangci_lint,
 		nls.builtins.formatting.prettier.with({
 			extra_args = { "--single-quote", "false" },
 		}),
 		nls.builtins.formatting.terraform_fmt,
 		nls.builtins.formatting.black,
 		nls.builtins.formatting.goimports,
-		nls.builtins.formatting.gofumpt,
+		nls.builtins.formatting.gofmt,
+		-- nls.builtins.formatting.gofumpt,
 		nls.builtins.formatting.latexindent.with({
 			extra_args = { "-g", "/dev/null" }, -- https://github.com/cmhughes/latexindent.pl/releases/tag/V3.9.3
 		}),

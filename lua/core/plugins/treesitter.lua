@@ -1,6 +1,7 @@
 local M = {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
+    enabled = true,
 	config = function()
 		local settings = require("core.settings")
 		require("nvim-treesitter.configs").setup({
