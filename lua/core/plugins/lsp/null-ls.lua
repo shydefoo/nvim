@@ -7,6 +7,7 @@ nls.setup({
         nls.builtins.formatting.stylua.with({ extra_args = { "--indent-type", "Spaces", "--indent-width", "2" } }),
         nls.builtins.diagnostics.flake8.with({
             extra_args = { "--max-line-length=120" },
+            command = "/Users/shide.foo/.pyenv/versions/3.9.1/bin/flake8",
         }),
         nls.builtins.diagnostics.eslint_d,
         nls.builtins.formatting.prettier.with({
@@ -14,7 +15,7 @@ nls.setup({
         }),
         nls.builtins.formatting.terraform_fmt,
         nls.builtins.formatting.black.with({
-            command = "/Users/shide.foo/.pyenv/versions/3.7.8/bin/black",
+            command = "/Users/shide.foo/.pyenv/versions/3.9.1/bin/black",
         }),
         nls.builtins.formatting.goimports,
         nls.builtins.formatting.gofmt,
@@ -28,6 +29,8 @@ nls.setup({
         nls.builtins.code_actions.gitsigns,
         nls.builtins.formatting.shfmt,
         -- nls.builtins.diagnostics.ruff,
+        -- c,cpp formatting
+        nls.builtins.formatting.clang_format,
     },
     on_attach = function(client, bufnr)
         vim.keymap.set(

@@ -36,6 +36,8 @@ M.mason_tool_installer_ensure_installed = {
 	"shellcheck",
 	"tflint",
 	"yamllint",
+    "cpplint",
+    "cpptools",
 	-- DAP
 	"debugpy",
 }
@@ -53,6 +55,7 @@ M.lsp_servers = {
 	"yamlls",
 	"gopls",
 	"solargraph",
+    "clangd"
 }
 
 return M
