@@ -1,22 +1,34 @@
 local wk = require("which-key")
 local func = require("core.functions")
 wk.register({
-	-- nvim-tree key-bindings
-	n = {
-		name = "file", -- optional group name
-		n = { "<cmd>NvimTreeToggle<cr>", "Toggle nvim tree" },
-		f = { "<cmd>NvimTreeFindFileToggle<cr>", "Find file in tree" },
-	},
-	f = {
-		name = "Files",
-		-- g = { "<cmd>Telescope live_grep<cr>", "live grep" },
-		b = { "<cmd>Telescope file_browser<cr>", "File Browser" },
-		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-        f = {"<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>", "Fuzzy finder"}
-	},
+    -- nvim-tree key-bindings
+    n = {
+        name = "file", -- optional group name
+        n = { "<cmd>NvimTreeToggle<cr>", "Toggle nvim tree" },
+        f = { "<cmd>NvimTreeFindFileToggle<cr>", "Find file in tree" },
+    },
+    f = {
+        name = "Files",
+        -- g = { "<cmd>Telescope live_grep<cr>", "live grep" },
+        b = { "<cmd>Telescope file_browser<cr>", "File Browser" },
+        r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+        f = {
+            "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>",
+            "Fuzzy finder" }
+    },
     g = {
         name = "git",
-        g = {"<cmd>vertical G<cr>", "Git status"}
+        g = { "<cmd>vertical G<cr>", "Git status" }
+    },
+
+    x = {
+        name = "Trouble",
+        x = { "<cmd>lua require('trouble').open()<cr>", "Trouble" },
+        w = { "<cmd>lua require('trouble').open('workspace_diagnostics')<cr>", "Workspace Diagnostics" },
+        d = { "<cmd>lua require('trouble').open('document_diagnostics')<cr>", "Document Diagnostics" },
+        q = { "<cmd>lua require('trouble').open('quickfix')<cr>", "Quickfix" },
+        l = { "<cmd>lua require('trouble').open('loclist')<cr>", "Location List" },
+        R = { "<cmd>lua require('trouble').open('lsp_references')<cr>", "LSP References" },
     },
 }, { prefix = "<leader>", silent = true })
 
