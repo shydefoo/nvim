@@ -34,7 +34,10 @@ wk.register({
         name = "quickfix shortcuts",
         c = {"<cmd>botright cope<cr>"},
         n = {"<cmd>cn<cr>"},
-        p = {"<cmd>cp<cr>"}
+        p = {"<cmd>cp<cr>"},
+        ["1"] = {"<cmd>colorscheme dayfox<cr>", "Dayfox"},
+        ["2"] = {"<cmd>colorscheme duskfox<cr>", "Duskfox"},
+        ["3"] = {"<cmd>colorscheme nightfox<cr>", "Nightfox"},
     },
     q = {
         s = { "<cmd>lua require('persistence').load()<cr>", "Restore Session" },
