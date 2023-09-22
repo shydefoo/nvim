@@ -1,6 +1,6 @@
 local M = {
     "akinsho/nvim-toggleterm.lua",
-    keys = "<leader>/",
+    event = "VeryLazy",
     config = function()
         local map = vim.api.nvim_set_keymap
         local buf_map = vim.api.nvim_buf_set_keymap

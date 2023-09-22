@@ -4,7 +4,6 @@ local M = {
     dependencies = {
         "nvim-lua/plenary.nvim",
     },
-    keys = "<leader>d"
 }
 
 return M
