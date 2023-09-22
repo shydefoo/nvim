@@ -4,6 +4,7 @@ M.theme = ""
 M.treesitter_ensure_installed = {
 	"bash",
 	"cmake",
+    "csv",
 	"css",
 	"dockerfile",
 	"go",
@@ -11,6 +12,7 @@ M.treesitter_ensure_installed = {
 	"html",
 	"java",
 	"javascript",
+    "typescript",
 	"json",
 	"kotlin",
 	"ledger",
@@ -22,8 +24,19 @@ M.treesitter_ensure_installed = {
 	"regex",
 	"toml",
 	"vim",
+    "vimdoc",
 	"yaml",
-	-- "sql",
+	"sql",
+    "rust",
+    "jq",
+    "c",
+    "cpp",
+    "cmake",
+    "gitcommit",
+    "http",
+    "ruby",
+    "promql",
+    "proto"
 }
 M.mason_tool_installer_ensure_installed = {
 	-- Formatter
