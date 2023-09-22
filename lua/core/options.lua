@@ -1,25 +1,19 @@
 -- TODO: Port to lua
-vim.cmd([[
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " => General
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " Sets how many lines of history VIM has to remember
-    set history=500
-    
-    " Enable filetype plugins
-    filetype plugin on
-    filetype indent on
-    
-    " Set to auto read when a file is changed from the outside
-    set autoread
-    
-    " Fast saving
-    nmap <leader>w :w!<cr>
-    
-    " :W sudo saves the file 
-    " (useful for handling the permission-denied error)
-    command W w !sudo tee % > /dev/null
-]])
+-- General settings
+vim.o.history = 500  -- Sets how many lines of history Neovim has to remember
+
+-- Enable filetype plugins and indenting
+vim.cmd('filetype plugin on')
+vim.cmd('filetype indent on')
+
+-- Set to auto read when a file is changed from the outside
+vim.o.autoread = true
+
+-- Fast saving
+vim.api.nvim_set_keymap('n', '<leader>w', ':w!<cr>', { noremap = true, silent = true })
+
+-- :W sudo saves the file (useful for handling the permission-denied error)
+vim.cmd('command! -nargs=0 W w !sudo tee % > /dev/null')
 vim.cmd([[
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => VIM user interface
@@ -260,9 +254,9 @@ vim.cmd([[
         call setreg('/', old_query)
     endfun
     
-    if has("autocmd")
-        autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
-    endif
+    " if has("autocmd")
+    "     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+    " endif
     
     
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -386,26 +380,6 @@ vim.cmd([[
     map ½ $
     cmap ½ $
     imap ½ $
-    
-    
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " => Parenthesis/bracket
-    """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    "vnoremap $1 <esc>`>a)<esc>`<i(<esc>
-    "vnoremap $2 <esc>`>a]<esc>`<i[<esc>
-    "vnoremap $3 <esc>`>a}<esc>`<i{<esc>
-    "vnoremap $$ <esc>`>a"<esc>`<i"<esc>
-    "vnoremap $q <esc>`>a'<esc>`<i'<esc>
-    "vnoremap $t <esc>`>a`<esc>`<i`<esc>
-    "vnoremap $6 <esc>`>a~<esc>`<i~<esc>
-    
-    " Map auto complete of (, ", ', [
-    "inoremap $1 ()<esc>i
-    "inoremap $2 []<esc>i
-    "inoremap $3 {}<esc>i
-    "inoremap $4 {<esc>o}<esc>O
-    "inoremap $q ''<esc>i
-    "inoremap $e ""<esc>i
     
     
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
