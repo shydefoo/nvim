@@ -1,6 +1,6 @@
 local M = {
     "heavenshell/vim-pydocstring",
-    keys = {"<C-_>"},
+    event = "VeryLazy",
     build = "make install",
     config = function()
         vim.g.pydocstring_doq_path = "/Users/shide.foo/.pyenv/versions/3.7.8/bin/doq"

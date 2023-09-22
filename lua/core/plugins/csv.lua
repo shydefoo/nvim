@@ -1,6 +1,6 @@
 local M = {
     "chrisbra/csv.vim",
-    lazy = true,
+    ft = {"csv"}
 }
 
 return M

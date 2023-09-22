@@ -1,6 +1,6 @@
 local M = {
-    lazy = true,
     "pwntester/octo.nvim",
+    event = "VeryLazy",
     dependencies = {
         "nvim-lua/plenary.nvim",
         "nvim-telescope/telescope.nvim",

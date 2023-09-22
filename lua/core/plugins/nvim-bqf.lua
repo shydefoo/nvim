@@ -6,8 +6,10 @@ local M = {
             build = function()
                 vim.fn["fzf#install"]()
             end,
+            event = "VeryLazy"
         },
     },
+    event = "VeryLazy"
 }
 
 return M

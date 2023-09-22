@@ -1,6 +1,6 @@
 return {
-    { "mfussenegger/nvim-dap", lazy = true },
-    { "leoluz/nvim-dap-go", config = true, lazy = true },
+    { "mfussenegger/nvim-dap", event = "VeryLazy" },
+    { "leoluz/nvim-dap-go", config = true, event = "VeryLazy" },
     opt = {
         dap_configurations = {
             {
@@ -30,6 +30,6 @@ return {
         dependencies = {
             "mfussenegger/nvim-dap",
         },
-        lazy = true,
+        event = "VeryLazy"
     },
 }

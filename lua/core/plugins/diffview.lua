@@ -1,6 +1,6 @@
 local M = {
     "sindrets/diffview.nvim",
-    cmd = {"DiffViewopen"}
+    event = "VeryLazy",
 
 }
 return M
