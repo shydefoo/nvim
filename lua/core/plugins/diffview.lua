@@ -1,4 +1,5 @@
 local M = {
-    "sindrets/diffview.nvim"
+    "sindrets/diffview.nvim",
+    lazy = true,
 }
 return M

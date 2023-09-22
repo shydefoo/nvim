@@ -1,4 +1,4 @@
 local M = {
-	"junegunn/gv.vim",
+  "junegunn/gv.vim",
 }
 return M

@@ -1,5 +1,6 @@
 local M = {
-	"towolf/vim-helm",
+    "towolf/vim-helm",
+    ft = {"helm"},
 }
 
 return M

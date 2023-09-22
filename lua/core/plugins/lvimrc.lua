@@ -1,5 +1,6 @@
 local M = {
-	"embear/vim-localvimrc",
+    enabled = false,
+    "embear/vim-localvimrc",
 }
 
 return M
