@@ -7,34 +7,18 @@ wk.register({
 		n = { "<cmd>NvimTreeToggle<cr>", "Toggle nvim tree" },
 		f = { "<cmd>NvimTreeFindFileToggle<cr>", "Find file in tree" },
 	},
-	-- ale mappings
-	a = {
-		name = "ale",
-		x = { "<cmd>ALEFix<cr>", "Ale Fix" },
-		l = { "<cmd>ALELint<cr>", "Ale lint" },
-	},
 	f = {
 		name = "Files",
 		-- g = { "<cmd>Telescope live_grep<cr>", "live grep" },
 		b = { "<cmd>Telescope file_browser<cr>", "File Browser" },
 		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+        f = {"<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>", "Fuzzy finder"}
 	},
     g = {
         name = "git",
         g = {"<cmd>vertical G<cr>", "Git status"}
-    }
+    },
 }, { prefix = "<leader>", silent = true })
-
--- wk.register({
--- 	["<Tab>"] = { '<expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\\<Tab>"' },
--- }, { mode = "i" })
-
--- TODO: Figure out how to replace this with whichkey
--- vim.cmd([[
--- inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
--- inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
--- inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
--- ]])
 
 -- yank stack mappings
 -- wk.register({
