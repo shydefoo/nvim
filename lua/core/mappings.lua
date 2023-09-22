@@ -30,7 +30,19 @@ wk.register({
         l = { "<cmd>lua require('trouble').open('loclist')<cr>", "Location List" },
         R = { "<cmd>lua require('trouble').open('lsp_references')<cr>", "LSP References" },
     },
+    c = {
+        name = "quickfix shortcuts",
+        c = {"<cmd>botright cope<cr>"},
+        n = {"<cmd>cn<cr>"},
+        p = {"<cmd>cp<cr>"}
+    },
+    q = {
+        s = { "<cmd>lua require('persistence').load()<cr>", "Restore Session" },
+        l = { "<cmd>lua require('persistence').load({ last = true })<cr>", "Restore Last Session" },
+        d = { "<cmd>lua require('persistence').stop()<cr>", "Don't Save Current Session" },
+    },
 }, { prefix = "<leader>", silent = true })
+
 
 -- yank stack mappings
 -- wk.register({
