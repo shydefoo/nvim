@@ -131,7 +131,7 @@ local M = {
 				group_empty = true,
 			},
 			filters = { dotfiles = true },
-			git = { ignore = false },
+			git = { ignore = false, timeout=1000 },
 		})
 	end,
 }
