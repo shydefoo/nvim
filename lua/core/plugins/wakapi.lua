@@ -1,5 +1,6 @@
 local M = {
-    "wakatime/vim-wakatime"
+    "wakatime/vim-wakatime",
+    event = "VeryLazy",
 }
 
 return M

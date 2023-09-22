@@ -43,4 +43,3 @@ Some options are still configured using vimscript, but the rest of the plugins a
 
 ### Funky addons
 * [Modulating theme](https://github.com/shydefoo/nvim/blob/735b01876f34ecb505be7add247dca43825f4e82/lua/core/plugins/themes/modulating.lua#L1) based on the time of the day. I used different themes from [nightfox](https://github.com/EdenEast/nightfox.nvim) to change my colorscheme automatically without having to restart neovim. This seems to work as of now.
-

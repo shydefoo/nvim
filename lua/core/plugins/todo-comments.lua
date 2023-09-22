@@ -4,6 +4,7 @@ local M = {
 	config = function()
 		require("todo-comments").setup()
 	end,
+    event = "VeryLazy"
 }
 
 return M

@@ -1,4 +1,5 @@
 local M = {
-	"preservim/vim-markdown",
+    "preservim/vim-markdown",
+    lazy = true
 }
 return M

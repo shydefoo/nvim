@@ -100,6 +100,7 @@ end
 local M = {
 	"nvim-tree/nvim-tree.lua",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
+    event = "VeryLazy",
 	config = function()
 		require("nvim-tree").setup({
 			on_attach = on_attach,
@@ -131,9 +132,10 @@ local M = {
 				group_empty = true,
 			},
 			filters = { dotfiles = true },
-			git = { ignore = false },
+			git = { ignore = false, timeout=1000 },
 		})
 	end,
+
 }
 
 return M
