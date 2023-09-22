@@ -18,7 +18,8 @@ wk.register({
     },
     g = {
         name = "git",
-        g = { "<cmd>vertical G<cr>", "Git status" }
+        g = { "<cmd>vertical G<cr>", "Git status" },
+        f = { "<cmd>DiffviewFileHistory<cr>", "DiffviewFileHistory" }
     },
 
     x = {
@@ -32,12 +33,12 @@ wk.register({
     },
     c = {
         name = "quickfix shortcuts",
-        c = {"<cmd>botright cope<cr>"},
-        n = {"<cmd>cn<cr>"},
-        p = {"<cmd>cp<cr>"},
-        ["1"] = {"<cmd>colorscheme dayfox<cr>", "Dayfox"},
-        ["2"] = {"<cmd>colorscheme duskfox<cr>", "Duskfox"},
-        ["3"] = {"<cmd>colorscheme nightfox<cr>", "Nightfox"},
+        c = { "<cmd>botright cope<cr>" },
+        n = { "<cmd>cn<cr>" },
+        p = { "<cmd>cp<cr>" },
+        ["1"] = { "<cmd>colorscheme dayfox<cr>", "Dayfox" },
+        ["2"] = { "<cmd>colorscheme duskfox<cr>", "Duskfox" },
+        ["3"] = { "<cmd>colorscheme nightfox<cr>", "Nightfox" },
     },
     q = {
         s = { "<cmd>lua require('persistence').load()<cr>", "Restore Session" },
@@ -45,7 +46,6 @@ wk.register({
         d = { "<cmd>lua require('persistence').stop()<cr>", "Don't Save Current Session" },
     },
 }, { prefix = "<leader>", silent = true })
-
 
 -- yank stack mappings
 -- wk.register({
