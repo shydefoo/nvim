@@ -64,7 +64,7 @@ vim.cmd([[
     set incsearch 
     
     " Don't redraw while executing macros (good performance config)
-    set lazyredraw 
+    "set lazyredraw 
     
     " For regular expressions turn magic on
     set magic
@@ -88,6 +88,7 @@ vim.cmd([[
     
     " Add a bit extra margin to the left
     set foldcolumn=1
+    nmap <leader>wq :wq<cr>
     
 
 ]])

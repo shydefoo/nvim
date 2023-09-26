@@ -49,6 +49,18 @@ wk.register({
         d = { "<cmd>lua require('persistence').stop()<cr>", "Don't Save Current Session" },
     },
 }, { prefix = "<leader>", silent = true })
+wk.register({
+    g = {
+        name = "glance",
+        d = { "<cmd>Glance definitions<cr>", "Glance definitions" },
+        r = { "<cmd>Glance references<cr>", "Glance references" },
+        t = { "<cmd>Glance type_definitions<cr>", "Glance type definitions" },
+        i = { "<cmd>Glance implementations<cr>", "Glance type implementations" },
+        
+
+
+    }
+}, { prefix = "]", silent = true})
 
 -- yank stack mappings
 -- wk.register({
