@@ -20,7 +20,9 @@ wk.register({
         name = "git",
         g = { "<cmd>vertical G<cr>", "Git status" },
         f = { "<cmd>DiffviewFileHistory<cr>", "DiffviewFileHistory" },
-        l = {"<cmd>GV<cr>", "Git log"}
+        l = {"<cmd>GV<cr>", "Git log"},
+        p = {"<cmd>G! pull origin master<cr>", "Git pull master"},
+        P = {"<cmd>G! push<cr>", "Git push"},
     },
 
     x = {
