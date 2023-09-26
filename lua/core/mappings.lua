@@ -21,9 +21,9 @@ wk.register({
         g = { "<cmd>vertical G<cr>", "Git status" },
         f = { "<cmd>DiffviewFileHistory<cr>", "DiffviewFileHistory" },
         l = {"<cmd>GV<cr>", "Git log"},
-        p = {"<cmd>G pull origin master<cr>", "Git pull origin master"},
-        q = {"<cmd>G pull origin main<cr>", "Git pull origin main"},
-        P = {"<cmd>G push<cr>", "Git push"},
+        p = {"<cmd>G! pull origin master<cr>", "Git pull origin master"},
+        q = {"<cmd>G! pull origin main<cr>", "Git pull origin main"},
+        P = {"<cmd>G! push<cr>", "Git push"},
     },
     c = {
         name = "quickfix shortcuts",
