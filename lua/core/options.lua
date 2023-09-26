@@ -64,7 +64,7 @@ vim.cmd([[
     set incsearch 
     
     " Don't redraw while executing macros (good performance config)
-    set lazyredraw 
+    "set lazyredraw 
     
     " For regular expressions turn magic on
     set magic
