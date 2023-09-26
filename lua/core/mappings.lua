@@ -21,18 +21,9 @@ wk.register({
         g = { "<cmd>vertical G<cr>", "Git status" },
         f = { "<cmd>DiffviewFileHistory<cr>", "DiffviewFileHistory" },
         l = {"<cmd>GV<cr>", "Git log"},
-        p = {"<cmd>G! pull origin master<cr>", "Git pull master"},
-        P = {"<cmd>G! push<cr>", "Git push"},
-    },
-
-    x = {
-        name = "Trouble",
-        x = { "<cmd>lua require('trouble').open()<cr>", "Trouble" },
-        w = { "<cmd>lua require('trouble').open('workspace_diagnostics')<cr>", "Workspace Diagnostics" },
-        d = { "<cmd>lua require('trouble').open('document_diagnostics')<cr>", "Document Diagnostics" },
-        q = { "<cmd>lua require('trouble').open('quickfix')<cr>", "Quickfix" },
-        l = { "<cmd>lua require('trouble').open('loclist')<cr>", "Location List" },
-        R = { "<cmd>lua require('trouble').open('lsp_references')<cr>", "LSP References" },
+        p = {"<cmd>G pull origin master<cr>", "Git pull origin master"},
+        q = {"<cmd>G pull origin main<cr>", "Git pull origin main"},
+        P = {"<cmd>G push<cr>", "Git push"},
     },
     c = {
         name = "quickfix shortcuts",
@@ -56,11 +47,23 @@ wk.register({
         r = { "<cmd>Glance references<cr>", "Glance references" },
         t = { "<cmd>Glance type_definitions<cr>", "Glance type definitions" },
         i = { "<cmd>Glance implementations<cr>", "Glance type implementations" },
-        
-
-
-    }
+    },
+    t = {
+        name = "Trouble",
+        x = { "<cmd>lua require('trouble').open()<cr>", "Trouble" },
+        w = { "<cmd>lua require('trouble').open('workspace_diagnostics')<cr>", "Workspace Diagnostics" },
+        d = { "<cmd>lua require('trouble').open('document_diagnostics')<cr>", "Document Diagnostics" },
+        q = { "<cmd>lua require('trouble').open('quickfix')<cr>", "Quickfix" },
+        l = { "<cmd>lua require('trouble').open('loclist')<cr>", "Location List" },
+        R = { "<cmd>lua require('trouble').open('lsp_references')<cr>", "LSP References" },
+    },
 }, { prefix = "]", silent = true})
+wk.register({
+    t = {
+        name = "Todo",
+        t = { "<cmd>TodoTelescope<cr>", "TodoTelescope"}
+    }
+}, {prefix = "[", silent = true})
 
 -- yank stack mappings
 -- wk.register({
