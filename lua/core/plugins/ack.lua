@@ -1,9 +1,9 @@
 local M = {
     "mileszs/ack.vim",
-    keys = "<leader>g",
+    keys = "<leader>a",
     config = function()
         vim.cmd([[
-        map <leader>g :Ack 
+        map <leader>a :Ack 
         ]])
     end,
 }
