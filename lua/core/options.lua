@@ -88,6 +88,7 @@ vim.cmd([[
     
     " Add a bit extra margin to the left
     set foldcolumn=1
+    nmap <leader>wq :wq<cr>
     
 
 ]])
