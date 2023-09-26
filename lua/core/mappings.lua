@@ -1,40 +1,69 @@
 local wk = require("which-key")
 local func = require("core.functions")
 wk.register({
-	-- nvim-tree key-bindings
-	n = {
-		name = "file", -- optional group name
-		n = { "<cmd>NvimTreeToggle<cr>", "Toggle nvim tree" },
-		f = { "<cmd>NvimTreeFindFileToggle<cr>", "Find file in tree" },
-	},
-	-- ale mappings
-	a = {
-		name = "ale",
-		x = { "<cmd>ALEFix<cr>", "Ale Fix" },
-		l = { "<cmd>ALELint<cr>", "Ale lint" },
-	},
-	f = {
-		name = "Files",
-		-- g = { "<cmd>Telescope live_grep<cr>", "live grep" },
-		b = { "<cmd>Telescope file_browser<cr>", "File Browser" },
-		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-	},
+    -- nvim-tree key-bindings
+    n = {
+        name = "file", -- optional group name
+        n = { "<cmd>NvimTreeToggle<cr>", "Toggle nvim tree" },
+        f = { "<cmd>NvimTreeFindFileToggle<cr>", "Find file in tree" },
+    },
+    f = {
+        name = "Files",
+        -- g = { "<cmd>Telescope live_grep<cr>", "live grep" },
+        b = { "<cmd>Telescope file_browser<cr>", "File Browser" },
+        r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+        f = {
+            "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>",
+            "Fuzzy finder" }
+    },
     g = {
         name = "git",
-        g = {"<cmd>vertical G<cr>", "Git status"}
-    }
+        g = { "<cmd>vertical G<cr>", "Git status" },
+        f = { "<cmd>DiffviewFileHistory<cr>", "DiffviewFileHistory" },
+        l = {"<cmd>GV<cr>", "Git log"},
+        p = {"<cmd>G! pull origin master<cr>", "Git pull origin master"},
+        q = {"<cmd>G! pull origin main<cr>", "Git pull origin main"},
+        P = {"<cmd>G! push<cr>", "Git push"},
+    },
+    c = {
+        name = "quickfix shortcuts",
+        c = { "<cmd>botright cope<cr>" },
+        n = { "<cmd>cn<cr>" },
+        p = { "<cmd>cp<cr>" },
+        ["1"] = { "<cmd>colorscheme dayfox<cr>", "Dayfox" },
+        ["2"] = { "<cmd>colorscheme duskfox<cr>", "Duskfox" },
+        ["3"] = { "<cmd>colorscheme nightfox<cr>", "Nightfox" },
+    },
+    q = {
+        s = { "<cmd>lua require('persistence').load()<cr>", "Restore Session" },
+        l = { "<cmd>lua require('persistence').load({ last = true })<cr>", "Restore Last Session" },
+        d = { "<cmd>lua require('persistence').stop()<cr>", "Don't Save Current Session" },
+    },
 }, { prefix = "<leader>", silent = true })
-
--- wk.register({
--- 	["<Tab>"] = { '<expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\\<Tab>"' },
--- }, { mode = "i" })
-
--- TODO: Figure out how to replace this with whichkey
--- vim.cmd([[
--- inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
--- inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
--- inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
--- ]])
+wk.register({
+    g = {
+        name = "glance",
+        d = { "<cmd>Glance definitions<cr>", "Glance definitions" },
+        r = { "<cmd>Glance references<cr>", "Glance references" },
+        t = { "<cmd>Glance type_definitions<cr>", "Glance type definitions" },
+        i = { "<cmd>Glance implementations<cr>", "Glance type implementations" },
+    },
+    t = {
+        name = "Trouble",
+        x = { "<cmd>lua require('trouble').open()<cr>", "Trouble" },
+        w = { "<cmd>lua require('trouble').open('workspace_diagnostics')<cr>", "Workspace Diagnostics" },
+        d = { "<cmd>lua require('trouble').open('document_diagnostics')<cr>", "Document Diagnostics" },
+        q = { "<cmd>lua require('trouble').open('quickfix')<cr>", "Quickfix" },
+        l = { "<cmd>lua require('trouble').open('loclist')<cr>", "Location List" },
+        R = { "<cmd>lua require('trouble').open('lsp_references')<cr>", "LSP References" },
+    },
+}, { prefix = "]", silent = true})
+wk.register({
+    t = {
+        name = "Todo",
+        t = { "<cmd>TodoTelescope<cr>", "TodoTelescope"}
+    }
+}, {prefix = "[", silent = true})
 
 -- yank stack mappings
 -- wk.register({

@@ -1,25 +1,19 @@
 -- TODO: Port to lua
-vim.cmd([[
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " => General
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " Sets how many lines of history VIM has to remember
-    set history=500
-    
-    " Enable filetype plugins
-    filetype plugin on
-    filetype indent on
-    
-    " Set to auto read when a file is changed from the outside
-    set autoread
-    
-    " Fast saving
-    nmap <leader>w :w!<cr>
-    
-    " :W sudo saves the file 
-    " (useful for handling the permission-denied error)
-    command W w !sudo tee % > /dev/null
-]])
+-- General settings
+vim.o.history = 500  -- Sets how many lines of history Neovim has to remember
+
+-- Enable filetype plugins and indenting
+vim.cmd('filetype plugin on')
+vim.cmd('filetype indent on')
+
+-- Set to auto read when a file is changed from the outside
+vim.o.autoread = true
+
+-- Fast saving
+vim.api.nvim_set_keymap('n', '<leader>w', ':w!<cr>', { noremap = true, silent = true })
+
+-- :W sudo saves the file (useful for handling the permission-denied error)
+vim.cmd('command! -nargs=0 W w !sudo tee % > /dev/null')
 vim.cmd([[
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => VIM user interface
@@ -70,7 +64,7 @@ vim.cmd([[
     set incsearch 
     
     " Don't redraw while executing macros (good performance config)
-    set lazyredraw 
+    "set lazyredraw 
     
     " For regular expressions turn magic on
     set magic
@@ -94,6 +88,7 @@ vim.cmd([[
     
     " Add a bit extra margin to the left
     set foldcolumn=1
+    nmap <leader>wq :wq<cr>
     
 
 ]])
@@ -260,9 +255,9 @@ vim.cmd([[
         call setreg('/', old_query)
     endfun
     
-    if has("autocmd")
-        autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
-    endif
+    " if has("autocmd")
+    "     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+    " endif
     
     
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -360,54 +355,6 @@ vim.cmd([[
     catch
     endtry
     
-    
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " => Command mode related
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " Smart mappings on the command line
-    cno $h e ~/
-    cno $d e ~/Desktop/
-    cno $j e ./
-    cno $c e <C-\>eCurrentFileDir("e")<cr>
-    
-    " $q is super useful when browsing on the command line
-    " it deletes everything until the last slash 
-    cno $q <C-\>eDeleteTillSlash()<cr>
-    
-    " Bash like keys for the command line
-    cnoremap <C-A>		<Home>
-    cnoremap <C-E>		<End>
-    cnoremap <C-K>		<C-U>
-    
-    cnoremap <C-P> <Up>
-    cnoremap <C-N> <Down>
-    
-    " Map ½ to something useful
-    map ½ $
-    cmap ½ $
-    imap ½ $
-    
-    
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " => Parenthesis/bracket
-    """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    "vnoremap $1 <esc>`>a)<esc>`<i(<esc>
-    "vnoremap $2 <esc>`>a]<esc>`<i[<esc>
-    "vnoremap $3 <esc>`>a}<esc>`<i{<esc>
-    "vnoremap $$ <esc>`>a"<esc>`<i"<esc>
-    "vnoremap $q <esc>`>a'<esc>`<i'<esc>
-    "vnoremap $t <esc>`>a`<esc>`<i`<esc>
-    "vnoremap $6 <esc>`>a~<esc>`<i~<esc>
-    
-    " Map auto complete of (, ", ', [
-    "inoremap $1 ()<esc>i
-    "inoremap $2 []<esc>i
-    "inoremap $3 {}<esc>i
-    "inoremap $4 {<esc>o}<esc>O
-    "inoremap $q ''<esc>i
-    "inoremap $e ""<esc>i
-    
-    
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => General abbreviations
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -421,34 +368,6 @@ vim.cmd([[
     if executable('ag')
       let g:ackprg = 'ag --vimgrep --smart-case'
     endif
-    
-    " When you press gv you Ack after the selected text
-    "-- vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
-    
-    " Open Ack and put the cursor in the right position
-    "map <leader>g :Ack 
-    
-    " When you press <leader>r you can search and replace the selected text
-    "vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
-    
-    " Do :help cope if you are unsure what cope is. It's super useful!
-    "
-    " When you search with Ack, display your results in cope by doing:
-    "   <leader>cc
-    "
-    " To go to the next search result do:
-    "   <leader>n
-    "
-    " To go to the previous search results do:
-    "   <leader>p
-    "
-    map <leader>cc :botright cope<cr>
-    map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
-    map <leader>n :cn<cr>
-    map <leader>p :cp<cr>
-    
-    
-    
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => Helper functions
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -69,7 +69,7 @@ local M = {
                 },
             },
             defaults = {
-                file_ignore_patterns = { "node_modules", ".terraform", "%.jpg", "%.png", ".git/" },
+                file_ignore_patterns = { "node_modules", ".terraform", "%.jpg", "%.png", ".git/", ".temp_dirs/undodir" },
                 mappings = {
                     i = {
                         -- Close on first esc instead of going to normal mode

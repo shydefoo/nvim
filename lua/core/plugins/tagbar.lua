@@ -1,6 +1,6 @@
 local M = {
     "preservim/tagbar",
-    cmd = {"TagbarToggle"},
+    ft = {"c", "cpp", "go", "python"},
     config = function()
         vim.keymap.set("n", "<F8>", "<cmd>TagbarToggle<cr>", { silent = true })
         vim.g.tagbar_type_go = {
@@ -24,6 +24,7 @@ local M = {
             kind2scope = { t = "ctype", n = "ntype" },
             scope2kind = { ctype = "t", ntype = "n" },
         }
+        vim.cmd([[autocmd FileType c,cpp,go,python TagbarOpen]])
     end,
 }
 

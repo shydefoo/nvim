@@ -26,5 +26,8 @@ require("lazy").setup("core.plugins", {
 		enabled = true,
 		notify = true, -- get a notification when changes are found
 	},
+    checker = {
+        enabled = true
+    },
 	debug = false,
 })

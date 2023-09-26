@@ -1,4 +1,4 @@
-inspect = require("core.inspect")
+local inspect = require("core.inspect")
 
 local M = {}
 M.get_visual_selection = function()
