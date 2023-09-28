@@ -1,9 +1,9 @@
 local M = {
     {
         "vim-airline/vim-airline",
-        lazy = true,
         dependencies = {
             { "vim-airline/vim-airline-themes" },
+            { "tpope/vim-fugitive" },
         },
         config = function()
             vim.g["airline#extensions#tabline#enabled"] = 1
