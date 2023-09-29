@@ -427,3 +427,17 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 vim.g.nvim_tree_disable_netrw = 0
+local time = os.date("*t")
+if 7 <= time.hour and time.hour <= 9 then
+    -- 0700 to 0959
+    vim.g.airline_theme = "solarized"
+elseif 10 <= time.hour and time.hour <= 15 then
+    -- 1000 to 1559
+    vim.g.airline_theme = "solarized"
+elseif 16 <= time.hour and time.hour <= 19 then
+    -- 1600 to 1959
+    vim.g.airline_theme = "solarized"
+elseif (20 <= time.hour or time.hour <= 6) then
+    -- 2000 to 0659
+    vim.g.airline_theme = "deus"
+end
