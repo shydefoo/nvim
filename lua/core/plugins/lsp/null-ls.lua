@@ -5,10 +5,10 @@ nls.setup({
     debug = true,
     sources = {
         nls.builtins.formatting.stylua.with({ extra_args = { "--indent-type", "Spaces", "--indent-width", "2" } }),
-        nls.builtins.diagnostics.flake8.with({
-            extra_args = { "--max-line-length=120" },
-            command = "/Users/shide.foo/.pyenv/versions/3.9.1/bin/flake8",
-        }),
+        -- nls.builtins.diagnostics.flake8.with({
+        --     extra_args = { "--max-line-length=120" },
+        --     command = "/Users/shide.foo/.pyenv/versions/3.9.1/bin/flake8",
+        -- }),
         nls.builtins.diagnostics.eslint_d,
         nls.builtins.formatting.prettier.with({
             extra_args = { "--single-quote", "false" },
