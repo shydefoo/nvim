@@ -118,7 +118,7 @@ local M = {
 				--     col = (vim.api.nvim_list_uis()[1].width - 90) * 0.5,
 				-- },
 				-- },
-				side = "right",
+				side = "left",
 			},
 			renderer = {
 				icons = {
@@ -133,6 +133,8 @@ local M = {
 			},
 			filters = { dotfiles = true },
 			git = { ignore = false, timeout=1000 },
+            view = { adaptive_size = true },
+            update_focused_file = {enable = true}
 		})
         vim.keymap.set("n", "<leader>1", "<cmd>NvimTreeToggle<cr>")
 	end,
