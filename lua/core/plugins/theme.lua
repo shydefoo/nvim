@@ -32,7 +32,6 @@ else
 		},
 		config = function()
 			require("core.plugins.themes.modulating").set_theme()
-			vim.cmd([[AirlineRefresh]])
 		end,
 	}
 end
