@@ -1,6 +1,7 @@
 local M = {
     {
         "vim-airline/vim-airline",
+        enabled=false,
         dependencies = {
             { "vim-airline/vim-airline-themes" },
             { "tpope/vim-fugitive" },

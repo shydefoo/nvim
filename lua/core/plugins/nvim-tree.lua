@@ -134,7 +134,7 @@ local M = {
 			filters = { dotfiles = true },
 			git = { ignore = false, timeout=1000 },
             view = { adaptive_size = true },
-            update_focused_file = {enable = true}
+            -- update_focused_file = {enable = true}
 		})
         vim.keymap.set("n", "<leader>1", "<cmd>NvimTreeToggle<cr>")
 	end,

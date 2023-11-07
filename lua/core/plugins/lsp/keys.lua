@@ -29,19 +29,18 @@ M._keys = {
 	{ "<leader>lq", vim.diagnostic.setloclist, desc = "Diagnostics in qflist" },
 	-- NOTE: Not sure what this does
 	-- { "<leader>lws", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace Symbols" },
-	{ "<leader>jwd", "<cmd>Telescope diagnostics<cr>", desc = "Workspace Symbols" },
+	-- { "<leader>jwd", "<cmd>Telescope diagnostics<cr>", desc = "Workspace Symbols" },
 	-- { "<leader>lwa", vim.lsp.buf.add_workspace_folder, desc = "Add Folder" },
 	-- { "<leader>lwl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", desc = "List Folders" },
 	-- { "<leader>lwr", vim.lsp.buf.remove_workspace_folder, desc = "Remove Folder" },
 }
-
 function M.on_attach(client, buffer)
 	local Keys = require("lazy.core.handler.keys")
 	local keymaps = {}
 
 	for _, value in ipairs(M._keys) do
 		local keys = Keys.parse(value)
-		if keys[2] == vim.NIL or keys[2] == false then
+		if keys.rhs == vim.NIL or keys.rhs == false then
 			keymaps[keys.id] = nil
 		else
 			keymaps[keys.id] = keys
@@ -54,7 +53,7 @@ function M.on_attach(client, buffer)
 			opts.has = nil
 			opts.silent = true
 			opts.buffer = buffer
-			vim.keymap.set(keys.mode or "n", keys[1], keys[2], opts)
+			vim.keymap.set(keys.mode or "n", keys.lhs, keys.rhs, opts)
 		end
 	end
 end

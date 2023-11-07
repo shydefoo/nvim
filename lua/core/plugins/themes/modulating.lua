@@ -24,7 +24,6 @@ M.set_theme_now = function()
         vim.cmd([[colorscheme nightfox]])
         vim.g.airline_theme = "deus"
     end
-    vim.cmd([["AirlineRefresh"]])
 end
 M.set_theme = function()
     local timer = vim.loop.new_timer()
@@ -33,7 +32,6 @@ M.set_theme = function()
         600000, -- call every 10 min
         vim.schedule_wrap(M.set_theme_now)
     )
-    vim.cmd([["AirlineRefresh"]])
 end
 
 return M

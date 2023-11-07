@@ -282,6 +282,9 @@ vim.cmd([[
     " always use clipboard for all operations 
     set clipboard +=unnamedplus
 
+    " disable macro recording
+    map q <Nop>
+
     
 ]])
 
@@ -441,3 +444,4 @@ elseif (20 <= time.hour or time.hour <= 6) then
     -- 2000 to 0659
     vim.g.airline_theme = "deus"
 end
+

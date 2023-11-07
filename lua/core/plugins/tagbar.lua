@@ -24,7 +24,6 @@ local M = {
             kind2scope = { t = "ctype", n = "ntype" },
             scope2kind = { ctype = "t", ntype = "n" },
         }
-        vim.cmd([[autocmd FileType c,cpp,go,python TagbarOpen]])
     end,
 }
 
