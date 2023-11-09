@@ -20,7 +20,7 @@ M._keys = {
 	{ "<leader>lI", "<cmd>Telescope lsp_implementations<cr>", desc = "Goto Implementation" },
 	{ "<leader>lt", "<cmd>Telescope lsp_type_definitions<cr>", desc = "Goto Type Definition" },
 	{ "<leader>jw", vim.lsp.buf.hover, desc = "Hover Signature Help", has = "signatureHelp" },
-	{ "<c-k>", vim.lsp.buf.signature_help, mode = "i", desc = "Signature Help", has = "signatureHelp" },
+	{ "<leader>js", vim.lsp.buf.signature_help, desc = "Signature Help", has = "signatureHelp" },
 	{ "<leader>]", vim.diagnostic.goto_next, desc = "Next Diagnostic" },
 	{ "<leader>[", vim.diagnostic.goto_prev, desc = "Prev Diagnostic" },
 	{ "<leader>la", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" }, has = "codeAction" },
