@@ -15,7 +15,7 @@ nls.setup({
         }),
         nls.builtins.formatting.terraform_fmt,
         nls.builtins.formatting.black.with({
-            command = "/Users/shide.foo/.pyenv/versions/3.9.1/bin/black",
+            command = "/Users/shidefoo/.local/share/nvim/mason/bin/black",
         }),
         nls.builtins.formatting.goimports,
         nls.builtins.formatting.gofmt,
