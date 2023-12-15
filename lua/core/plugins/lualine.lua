@@ -1,6 +1,6 @@
 local M = {
-	-- "nvim-lualine/lualine.nvim",
-	-- config = true,
+	"nvim-lualine/lualine.nvim",
+	config = true,
 }
 
 return M
