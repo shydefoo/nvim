@@ -33,6 +33,7 @@ M.treesitter_ensure_installed = {
     "cpp",
     "cmake",
     "gitcommit",
+    "gitignore",
     "http",
     "ruby",
     "promql",
