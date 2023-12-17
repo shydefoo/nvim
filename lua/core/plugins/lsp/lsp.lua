@@ -31,3 +31,6 @@ for _, lsp in ipairs(settings.lsp_servers) do
 		},
 	})
 end
+
+-- fix cpp ifdef highlighting
+vim.api.nvim_set_hl(0, '@lsp.type.comment.cpp', {})

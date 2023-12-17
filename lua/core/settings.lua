@@ -1,6 +1,6 @@
 local M = {}
 
-M.theme = ""
+M.theme = "tokyonight"
 M.treesitter_ensure_installed = {
 	"bash",
 	"cmake",
@@ -33,6 +33,7 @@ M.treesitter_ensure_installed = {
     "cpp",
     "cmake",
     "gitcommit",
+    "gitignore",
     "http",
     "ruby",
     "promql",

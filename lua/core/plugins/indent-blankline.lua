@@ -1,12 +1,7 @@
 local M = {
     "lukas-reineke/indent-blankline.nvim",
-    ft = { "yaml", "helm" },
-    config = function()
-        require("indent_blankline").setup({
-            show_current_context = true,
-            show_current_context_start = true,
-        })
-    end,
+    main = "ibl",
+    ft = { "yaml", "helm", "json" },
 }
 
 return M
