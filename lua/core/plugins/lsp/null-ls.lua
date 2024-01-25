@@ -1,6 +1,7 @@
 local nls = require("null-ls")
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
+local homeDirectory = os.getenv("HOME")
 nls.setup({
     debug = true,
     sources = {
@@ -15,7 +16,8 @@ nls.setup({
         }),
         nls.builtins.formatting.terraform_fmt,
         nls.builtins.formatting.black.with({
-            command = "/Users/shidefoo/.local/share/nvim/mason/bin/black",
+            command = string.format("%s/.local/share/nvim/mason/bin/black", homeDirectory),
+            -- command = "/Users/shide.foo/.local/share/nvim/mason/bin/black",
         }),
         nls.builtins.formatting.goimports,
         nls.builtins.formatting.gofmt,

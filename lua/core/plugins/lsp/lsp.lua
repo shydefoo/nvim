@@ -28,6 +28,9 @@ for _, lsp in ipairs(settings.lsp_servers) do
 			-- redhat = { telemetry = { enabled = false } },
 			-- texlab = lsp_settings.tex,
 			yaml = lsp_settings.yaml,
+            python = {
+                analysis = { diagnosticMode = "off", typeCheckingMode = "off" },
+            },
 		},
 	})
 end
