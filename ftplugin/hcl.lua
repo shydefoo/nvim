@@ -1,0 +1,1 @@
+vim.shiftwidth = 2
