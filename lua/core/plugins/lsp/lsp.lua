@@ -29,7 +29,7 @@ for _, lsp in ipairs(settings.lsp_servers) do
 			-- texlab = lsp_settings.tex,
 			yaml = lsp_settings.yaml,
             python = {
-                analysis = { diagnosticMode = "off", typeCheckingMode = "off" },
+                analysis = { diagnosticMode = "openFilesOnly", typeCheckingMode = "off" },
             },
 		},
 	})

@@ -20,10 +20,10 @@ wk.register({
         name = "git",
         g = { "<cmd>vertical G<cr>", "Git status" },
         f = { "<cmd>DiffviewFileHistory<cr>", "DiffviewFileHistory" },
-        l = {"<cmd>GV<cr>", "Git log"},
-        p = {"<cmd>G! pull origin master<cr>", "Git pull origin master"},
-        q = {"<cmd>G! pull origin main<cr>", "Git pull origin main"},
-        P = {"<cmd>G! push<cr>", "Git push"},
+        l = { "<cmd>GV<cr>", "Git log" },
+        p = { "<cmd>G! pull origin master<cr>", "Git pull origin master" },
+        q = { "<cmd>G! pull origin main<cr>", "Git pull origin main" },
+        P = { "<cmd>G! push<cr>", "Git push" },
     },
     c = {
         name = "quickfix shortcuts",
@@ -38,6 +38,15 @@ wk.register({
         s = { "<cmd>lua require('persistence').load()<cr>", "Restore Session" },
         l = { "<cmd>lua require('persistence').load({ last = true })<cr>", "Restore Last Session" },
         d = { "<cmd>lua require('persistence').stop()<cr>", "Don't Save Current Session" },
+        c = {
+            function()
+                local input = vim.fn.input("Quick Chat: ")
+                if input ~= "" then
+                    require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+                end
+            end,
+            "Quick Chat - Copilot",
+        }
     },
 }, { prefix = "<leader>", silent = true })
 wk.register({
@@ -57,13 +66,13 @@ wk.register({
         l = { "<cmd>lua require('trouble').open('loclist')<cr>", "Location List" },
         R = { "<cmd>lua require('trouble').open('lsp_references')<cr>", "LSP References" },
     },
-}, { prefix = "]", silent = true})
+}, { prefix = "]", silent = true })
 wk.register({
     t = {
         name = "Todo",
-        t = { "<cmd>TodoTelescope<cr>", "TodoTelescope"}
+        t = { "<cmd>TodoTelescope<cr>", "TodoTelescope" }
     }
-}, {prefix = "[", silent = true})
+}, { prefix = "[", silent = true })
 
 -- yank stack mappings
 -- wk.register({

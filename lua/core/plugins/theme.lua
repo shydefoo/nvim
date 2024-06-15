@@ -5,6 +5,7 @@ if settings.theme == "tokyonight" then
 		"folke/tokyonight.nvim",
 		config = function()
 			require("core.plugins.themes.tokyonight")
+            vim.cmd("set background=light")
 		end,
 	}
 elseif settings.theme == "tundra" then
@@ -23,15 +24,16 @@ elseif settings.theme == "vim-solarized8" then
 			end,
 		},
 	}
-else
+elseif settings.theme == "dawnfox" then
 	return {
 		"EdenEast/nightfox.nvim",
-		dependencies = {
-			{ "vim-airline/vim-airline" },
-			{ "vim-airline/vim-airline-themes" },
-		},
+		-- dependencies = {
+		-- 	{ "vim-airline/vim-airline" },
+		-- 	{ "vim-airline/vim-airline-themes" },
+		-- },
 		config = function()
-			require("core.plugins.themes.modulating").set_theme()
+			-- require("core.plugins.themes.modulating").set_theme()
+            vim.cmd("colorscheme dawnfox")
 		end,
 	}
 end

@@ -1,6 +1,6 @@
 local M = {}
 
-M.theme = "tokyonight"
+M.theme = "dawnfox"
 M.treesitter_ensure_installed = {
 	"bash",
 	"cmake",
