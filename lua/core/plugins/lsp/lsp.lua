@@ -1,6 +1,7 @@
 local settings = require("core.settings")
 local nvim_lsp = require("lspconfig")
 local lsp_settings = require("core.plugins.lsp.settings")
+local utils = require("core.plugins.lsp.utils")
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 -- enable autoclompletion via nvim-cmp
@@ -29,7 +30,7 @@ for _, lsp in ipairs(settings.lsp_servers) do
 			-- texlab = lsp_settings.tex,
 			yaml = lsp_settings.yaml,
             python = {
-                analysis = { diagnosticMode = "openFilesOnly", typeCheckingMode = "off" },
+                analysis = { diagnosticMode = "workspace", typeCheckingMode = "basic" },
             },
 		},
 	})
