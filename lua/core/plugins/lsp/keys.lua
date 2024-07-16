@@ -61,13 +61,25 @@ function M.on_attach(client, buffer)
   end
 
   for _, keys in pairs(keymaps) do
-    if not keys.has or client.server_capabilities[keys.has .. "Provider"] then
-      local opts = Keys.opts(keys)
-      opts.has = nil
-      opts.silent = true
-      opts.buffer = buffer
-      vim.keymap.set(keys.mode or "n", keys.lhs, keys.rhs, opts)
-    end
+    local status, err = pcall(function()
+      if not keys.has or client.server_capabilities[keys.has .. "Provider"] then
+        local opts = Keys.opts(keys)
+        ---@diagnostic disable-next-line: inject-field
+        opts.has = nil
+        ---@diagnostic disable-next-line: inject-field
+        opts.silent = true
+        ---@diagnostic disable-next-line: inject-field
+        opts.buffer = buffer
+        ---@diagnostic disable-next-line: param-type-mismatch
+        vim.keymap.set(keys.mode or "n", keys.lhs, keys.rhs, opts)
+      end
+    end)
+    -- if not status then
+    --   print("Error setting keymap: ", keys)
+    --   for k, v in pairs(keys) do
+    --     print(k, v)
+    --   end
+    -- end
   end
 end
 
